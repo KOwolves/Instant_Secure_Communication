@@ -1,15 +1,15 @@
-# 推荐的Python版本
-# Python>=3.7,<3.9
-
 # 加密相关依赖
-pycryptodome==3.15.0  # 用于AES和RSA加密
-rsa==4.9  # 用于RSA加密/解密操作
+pycryptodome~=3.23.0
+rsa~=4.9.1
+cryptography~=43.0.0
 
 # 数据库相关依赖
-pymysql==1.0.2  # MySQL数据库连接
+pymysql~=1.1.1
 
-# GUI相关依赖
-pillow==9.5.0  # 图像处理，用于GUI中显示图片
+pyodbc~=5.2.0
+flask~=3.0.3
+flask-socketio~=5.5.1
+eventlet~=0.39.1
 
 # 网络相关依赖（标准库，无需安装）
 # socket
