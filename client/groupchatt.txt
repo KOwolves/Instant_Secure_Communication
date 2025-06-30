@@ -1,0 +1,200 @@
+import socket, select, threading
+from tkinter import *
+from tkinter import messagebox
+from tkinter import scrolledtext
+import time
+#host = socket.gethostname()
+host = ''
+Server_ip = '10.21.170.91'
+addr = (Server_ip, 55555)
+ports = []
+c = ['#9370DB', '#062F4F', 'white', '#EEAA7B', '#E37222']
+def creategroup(myId,s):
+    msg = '66' + '|' + myId
+    try:
+        s.send(msg.encode())
+    except:
+        print('command error')
+    try:
+        wel = s.recv(1024).decode()
+        messagebox.showwarning(title='Attention', message='%s' % wel)
+    except:
+        print("error ")
+    start_group_chat(s,host)
+    s.close()
+
+
+def conn():
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    print(s)
+    try:
+        s.connect(addr)
+    except:
+        print('con error')
+    return s
+def groupchoose(s):
+    print('here')
+    tk =Tk()
+
+    def enter_group(s,en):
+        group_number = en.get()
+        msg = '99' + '|' + "userjrr"+'@@@'+group_number
+        s.send(msg.encode())
+        print(msg)
+
+        '''����Ⱥ�ĺ������'''
+    entergroup = Frame(root)
+    tk.geometry("444x225")
+    tk.title("������Ⱥ��")
+    background = Frame(tk, bg='#ADD8E6')
+    background.grid()
+    p1 = Frame(tk, width=300, height=25, bg='#ADD8E6')
+    p2 = Frame(tk, width=300, height=50, bg='#ADD8E6')
+    p3 = Frame(tk, width=300, height=50, bg='#ADD8E6')
+    p1.grid(row=1, column=1, padx=72, pady=20)
+    p2.grid(row=2, column=1, padx=72, pady=20)
+    p3.grid(row=3, column=1, padx=72, pady=20)
+    p1.grid_propagate(0)
+    p2.grid_propagate(0)
+    p3.grid_propagate(0)
+    Label(p1, bg='#ADD8E6', fg='white', text="������Ⱥ�ĺ���", font=('����', 15), anchor='center').grid(row=0, column=0,
+                                                                                               rowspan=2,
+                                                                                               sticky=NSEW)
+    en = Entry(p2, bd=0, width=40)
+    en.grid(row=0, column=0, columnspan=2, sticky=NSEW)
+    Button(p3, bg='#87CEEB', bd=0, fg='white', text="����", font=('����', 15), width=16,
+           command=lambda: enter_group(conn(), en), anchor='center').pack()
+    tk.mainloop()
+    enter_group(s, en)
+def start_group_chat(s,myId):
+
+    def lis(s):
+        #my = [s]
+        while True:
+            #r, w, e = select.select(my, [], [])
+           # if s in r:
+            try:
+                recv_msg = s.recv(1024).decode()
+                print(recv_msg)
+                recv_msg.split(':')
+                msgshow(recv_msg[0],recv_msg[1])
+
+            except socket.error:
+                print('socket is error')
+
+                exit()
+
+    def talk(s,myId):
+        while True:
+            try:
+                info = txt_msgsend.get('0.0', END)
+                '''
+                try:
+                    s.send(info.encode())
+                except:
+                    print("send error")
+                '''
+                msgshow(myId, info)
+                txt_msgsend.delete('0.0', END)
+                print(info)
+
+            except :
+                print('can\'t input')
+                exit()
+    '''��up��'''
+    def msgsendEvent(event):
+        if event.keysym == 'Up':
+            talk(s,myId)
+    '''ȡ��������Ϣ������շ�����Ϣ'''
+    def cancel():
+        txt_msgsend.delete('0.0', END)
+    '''�ر����촰��'''
+    def closechatwindow(s,page):
+        ok = messagebox.askyesno(title='��ʾ', message='�Ƿ�ر�������棿')
+        if ok == True:
+            print('���ӶϿ�')
+            s.close()
+            page.destroy()
+
+
+    def msgshow(ID,sendInfo):
+        msg = ID + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()) + '\n'
+        txt_msglist.insert(END, msg, 'green')  # ���ʱ��
+        txt_msglist.insert(END, sendInfo)  # ��ȡ������Ϣ������ı�����Ϣ�б�
+        #txt_msgsend.delete('0.0', END)  # ��շ�����Ϣ
+    tk = Tk()
+    tk.title('Ⱥ��')
+    tk.geometry('900x800')
+    '''��������'''
+    canvas = Canvas(tk, bg='#FFFAF0', height=660, width=250)
+
+    '''��������'''
+    main_frame = Frame(tk)
+    f_msglist = Frame(tk, height=350, width=500)  # ����<��Ϣ�б���� >
+    f_msgsend = Frame(tk, height=150, width=500)  # ����<������Ϣ���� >
+    f_floor = Frame(tk, height=100, width=500)  # ����<��ť����>
+    f_right = Frame(tk, height=600, width=200)  # ����<ͼƬ����>
+    '''�����ؼ�'''
+
+    txt_msglist = scrolledtext.ScrolledText(f_msglist, height=35, width=100, bg="#F5F5F5", bd=0)
+    # ��Ϣ�б�����д����ı��ؼ�
+
+    txt_msglist.tag_config('green', foreground='pink')  # ��Ϣ�б�����д�����ǩ
+    txt_msgsend = Text(f_msgsend, height=15, width=100, bg="#FFFFF0", bd=0)  # ������Ϣ�����д����ı��ؼ�
+    txt_msgsend.bind('<KeyPress-Up>', msgsendEvent)  # ������Ϣ�����У��󶨡�UP��������Ϣ���͡�
+    '''txt_right = Text(f_right) #ͼƬ��ʾ���������ı��ؼ�'''
+    button_send = Button(f_floor, text='Send', bd=0, bg='YellowGreen', width=8, font='����',
+                         command=lambda: talk(s,myId))  # ��ť�����д�����ť���󶨷�����Ϣ����
+    button_cancel = Button(f_floor, text='Cancel', bd=0, bg='white', width=8, font='����',
+                           command=lambda: cancel())  # �����д���ȡ����ť����ȡ������
+    button_close = Button(f_floor, text='Close', bd=0, bg='white', width=8, font='����',
+                          command=lambda: closechatwindow(s,myId))  # �˳����촰��
+
+    '''��������'''
+    f_msglist.grid(row=0, column=0)  # ��Ϣ�б����
+    f_msgsend.grid(row=1, column=0)  # ������Ϣ����
+
+    f_floor.grid(row=2, column=0)  # ��ť����
+    canvas.grid(row=0, column=3, rowspan=3)  # ͼƬ��ʾ����
+    txt_msglist.grid()  # ��Ϣ�б��ı��ؼ�����
+    txt_msgsend.grid()  # ��Ϣ�����ı��ؼ�����
+    button_send.grid(row=0, column=0, sticky=W)  # ���Ͱ�ť�ؼ�����
+    button_cancel.grid(row=0, column=1, sticky=W)  # ȡ����ť�ؼ�����
+    button_close.grid(row=0, column=2, sticky=W)  # �رմ��ڰ�ť�ؼ�����
+    t = threading.Thread(target=lis, args=(s,))
+    t.start()
+
+'''
+def main():
+    ss = conn()
+
+    t = threading.Thread(target=lis, args=(ss,))
+    t.start()
+    t1 = threading.Thread(target=talk, args=(ss,))
+    t1.start()
+'''
+def Option_list(s):
+    '''�������'''
+    p1 = Frame(root, width=250, height=30, bg=c[0])
+    p2 = Frame(root, width=250, height=80, bg=c[0])
+    '''���ÿ��'''
+    p1.grid(row=0, column=0, padx=70, pady=70)
+    p2.grid(row=1, column=0,padx=70,pady=0)
+    '''�̶����λ��'''
+    p1.grid_propagate(0)
+    p2.grid_propagate(0)
+    '''����������ť������Ⱥ�ĺͽ���Ⱥ��'''
+    Button(p1, bd=0, bg='#87CEEB', fg=c[2], text="����Ⱥ��", font=('����', 15), width=20, command=lambda: creategroup(host,s),
+           anchor='center').grid()
+    Button(p2, bd=0, bg='#87CEEB', fg=c[2], text="����Ⱥ��", font=('����', 15), width=20, command=lambda: groupchoose(s),
+           anchor='center').grid()
+if __name__ == '__main__':
+#    main()
+    print('start')
+    root = Tk()
+    root.geometry("360x250")
+    root.title("��ȫ��ʱͨ��ϵͳ")
+    f=Frame(root, bg=c[0])
+    f.grid()
+    Option_list(conn())
+    root.mainloop()
