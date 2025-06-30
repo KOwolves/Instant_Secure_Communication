@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安全即时通信系统</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <!-- 登录表单 -->
+                <form action="#" class="sign-in-form">
+                    <h2 class="title">登录</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="用户名" id="login-username" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="密码" id="login-password" required>
+                    </div>
+                    <input type="submit" value="登录" class="btn solid">
+                </form>
+
+                <!-- 注册表单 -->
+                <form action="#" class="sign-up-form">
+                    <h2 class="title">注册</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="用户名" id="register-username" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="邮箱" id="register-email" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="密码" id="register-password" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="确认密码" id="register-confirm-password" required>
+                    </div>
+                    <input type="submit" value="注册" class="btn solid">
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>还没有账号？</h3>
+                    <p>立即注册加入我们的安全即时通信系统，与朋友安全地聊天、分享文件。</p>
+                    <button class="btn transparent" id="sign-up-btn">注册</button>
+                </div>
+                <img src="img/chat.svg" class="image" alt="聊天插图">
+            </div>
+
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>已经有账号了？</h3>
+                    <p>登录您的账号，立即开始与好友安全、私密地交流。</p>
+                    <button class="btn transparent" id="sign-in-btn">登录</button>
+                </div>
+                <img src="img/secure.svg" class="image" alt="安全插图">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
