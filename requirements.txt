@@ -1,0 +1,29 @@
+# 推荐的Python版本
+# Python>=3.7,<3.9
+
+# 加密相关依赖
+pycryptodome==3.15.0  # 用于AES和RSA加密
+rsa==4.9  # 用于RSA加密/解密操作
+
+# 数据库相关依赖
+pymysql==1.0.2  # MySQL数据库连接
+
+# GUI相关依赖
+pillow==9.5.0  # 图像处理，用于GUI中显示图片
+
+# 网络相关依赖（标准库，无需安装）
+# socket
+# select
+
+# 多线程相关依赖（标准库，无需安装）
+# threading
+
+# 实用工具依赖（标准库，无需安装）
+# hashlib - 用于哈希计算
+# re - 用于正则表达式
+# os - 用于文件和目录操作
+# json - 用于JSON处理
+# time - 用于时间相关操作
+# base64 - 用于编解码
+# datetime - 用于日期时间处理
+# random - 用于生成随机数
