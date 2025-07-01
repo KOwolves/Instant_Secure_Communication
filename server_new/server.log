@@ -1,0 +1,1243 @@
+2025-06-30 16:58:57,183 - __main__ - INFO - 服务器程序启动。
+2025-06-30 16:58:57,183 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 16:58:57,593 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 16:58:57,612 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 16:58:57,620 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 16:58:57,878 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 16:58:57,879 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 16:58:57,880 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 16:58:57,881 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 22:10:28,820 - __main__ - INFO - 服务器程序启动。
+2025-06-30 22:10:28,820 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 22:10:28,967 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 22:10:28,995 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 22:10:29,004 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 22:10:29,013 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 22:10:29,013 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 22:10:29,014 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 22:10:29,015 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 22:10:39,607 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3014) 的新连接。
+2025-06-30 22:10:39,610 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 3014) 启动。
+2025-06-30 22:10:39,615 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3014) 的命令: LOGIN
+2025-06-30 22:10:39,685 - server - ERROR - SecureChatServer: 处理来自 ('127.0.0.1', 3014) 的客户端请求时出错: Unicode-objects must be encoded before hashing
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 103, in _handle_client
+    user_id, public_key = self.db_manager.authenticate_user(username, password)
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 125, in authenticate_user
+    password_hash = hash_password(password)
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\utils.py", line 10, in hash_password
+    return hashlib.sha256(password).hexdigest()
+TypeError: Unicode-objects must be encoded before hashing
+2025-06-30 22:10:39,717 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 3014) 断开连接。
+2025-06-30 22:10:39,718 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 3014) 的连接已关闭。
+2025-06-30 22:10:50,052 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3030) 的新连接。
+2025-06-30 22:10:50,080 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 3030) 启动。
+2025-06-30 22:10:50,111 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3030) 的命令: LOGIN
+2025-06-30 22:10:50,111 - server - ERROR - SecureChatServer: 处理来自 ('127.0.0.1', 3030) 的客户端请求时出错: Unicode-objects must be encoded before hashing
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 103, in _handle_client
+    user_id, public_key = self.db_manager.authenticate_user(username, password)
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 125, in authenticate_user
+    password_hash = hash_password(password)
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\utils.py", line 10, in hash_password
+    return hashlib.sha256(password).hexdigest()
+TypeError: Unicode-objects must be encoded before hashing
+2025-06-30 22:10:50,123 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 3030) 断开连接。
+2025-06-30 22:10:50,125 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 3030) 的连接已关闭。
+2025-06-30 22:11:11,509 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3058) 的新连接。
+2025-06-30 22:11:11,509 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 3058) 启动。
+2025-06-30 22:11:11,509 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3058) 的命令: REGISTER
+2025-06-30 22:11:11,509 - server - ERROR - SecureChatServer: 处理来自 ('127.0.0.1', 3058) 的客户端请求时出错: Unicode-objects must be encoded before hashing
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 85, in _handle_client
+    if self.db_manager.register_user(username, password, public_key):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 97, in register_user
+    password_hash = hash_password(password)
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\utils.py", line 10, in hash_password
+    return hashlib.sha256(password).hexdigest()
+TypeError: Unicode-objects must be encoded before hashing
+2025-06-30 22:11:11,513 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 3058) 断开连接。
+2025-06-30 22:11:11,513 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 3058) 的连接已关闭。
+2025-06-30 22:11:19,625 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3062) 的新连接。
+2025-06-30 22:11:19,625 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 3062) 启动。
+2025-06-30 22:11:19,625 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3062) 的命令: REGISTER
+2025-06-30 22:11:19,625 - server - ERROR - SecureChatServer: 处理来自 ('127.0.0.1', 3062) 的客户端请求时出错: Unicode-objects must be encoded before hashing
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 85, in _handle_client
+    if self.db_manager.register_user(username, password, public_key):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 97, in register_user
+    password_hash = hash_password(password)
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\utils.py", line 10, in hash_password
+    return hashlib.sha256(password).hexdigest()
+TypeError: Unicode-objects must be encoded before hashing
+2025-06-30 22:11:19,625 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 3062) 断开连接。
+2025-06-30 22:11:19,625 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 3062) 的连接已关闭。
+2025-06-30 22:12:26,047 - __main__ - INFO - 服务器程序启动。
+2025-06-30 22:12:26,047 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 22:12:27,215 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 22:12:27,236 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 22:12:27,248 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 22:12:27,257 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 22:12:27,257 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 22:12:27,259 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 22:12:27,259 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 22:12:37,414 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3221) 的新连接。
+2025-06-30 22:12:37,451 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 3221) 启动。
+2025-06-30 22:12:37,476 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3221) 的命令: LOGIN
+2025-06-30 22:12:37,781 - db - INFO - DatabaseManager: 用户 'ztz' 认证成功。
+2025-06-30 22:12:37,797 - db - INFO - DatabaseManager: 用户 2 在线状态更新成功: 10.21.240.25:3222。
+2025-06-30 22:12:37,801 - server - INFO - SecureChatServer: 用户 ztz (ID: 2) 从 ('127.0.0.1', 3221) 登录。
+2025-06-30 22:12:37,803 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3221) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:12:37,811 - db - INFO - DatabaseManager: 已为用户 2 检索到 0 个在线好友信息。
+2025-06-30 22:12:37,811 - server - INFO - SecureChatServer: 向 ztz 提供了 0 个在线好友列表。
+2025-06-30 22:15:38,302 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 3221) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 22:15:38,334 - db - INFO - DatabaseManager: 用户 2 在线状态已清除。
+2025-06-30 22:15:38,342 - server - INFO - SecureChatServer: 已清理用户 ztz (ID: 2) 的会话并更新离线状态。
+2025-06-30 22:15:38,343 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 3221) 的连接已关闭。
+2025-06-30 22:15:51,585 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3582) 的新连接。
+2025-06-30 22:15:51,585 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 3582) 启动。
+2025-06-30 22:15:51,585 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3582) 的命令: LOGIN
+2025-06-30 22:15:51,594 - db - INFO - DatabaseManager: 用户 'ddd' 认证成功。
+2025-06-30 22:15:51,618 - db - INFO - DatabaseManager: 用户 1 在线状态更新成功: 10.21.240.25:3583。
+2025-06-30 22:15:51,622 - server - INFO - SecureChatServer: 用户 ddd (ID: 1) 从 ('127.0.0.1', 3582) 登录。
+2025-06-30 22:15:51,626 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3582) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:15:51,635 - db - INFO - DatabaseManager: 已为用户 1 检索到 0 个在线好友信息。
+2025-06-30 22:15:51,637 - server - INFO - SecureChatServer: 向 ddd 提供了 0 个在线好友列表。
+2025-06-30 22:16:54,750 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 3582) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 22:16:54,759 - db - INFO - DatabaseManager: 用户 1 在线状态已清除。
+2025-06-30 22:16:54,761 - server - INFO - SecureChatServer: 已清理用户 ddd (ID: 1) 的会话并更新离线状态。
+2025-06-30 22:16:54,761 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 3582) 的连接已关闭。
+2025-06-30 22:17:12,789 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3781) 的新连接。
+2025-06-30 22:17:12,791 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 3781) 启动。
+2025-06-30 22:17:12,792 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3781) 的命令: LOGIN
+2025-06-30 22:17:12,825 - db - INFO - DatabaseManager: 用户 'syn' 认证成功。
+2025-06-30 22:17:12,839 - db - INFO - DatabaseManager: 用户 3 在线状态更新成功: 10.21.240.25:3782。
+2025-06-30 22:17:12,839 - server - INFO - SecureChatServer: 用户 syn (ID: 3) 从 ('127.0.0.1', 3781) 登录。
+2025-06-30 22:17:12,842 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3781) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:17:12,843 - db - INFO - DatabaseManager: 已为用户 3 检索到 0 个在线好友信息。
+2025-06-30 22:17:12,851 - server - INFO - SecureChatServer: 向 syn 提供了 0 个在线好友列表。
+2025-06-30 22:17:14,388 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3781) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:17:14,391 - db - INFO - DatabaseManager: 已为用户 3 检索到 0 个在线好友信息。
+2025-06-30 22:17:14,393 - server - INFO - SecureChatServer: 向 syn 提供了 0 个在线好友列表。
+2025-06-30 22:17:14,394 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3781) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:17:14,398 - db - ERROR - DatabaseManager: 获取所有好友信息 UserID=3 时出错: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 390, in get_all_friends_info
+    cursor.execute(sql, user_id, user_id, user_id, user_id)
+pyodbc.ProgrammingError: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+2025-06-30 22:17:14,401 - server - INFO - SecureChatServer: 向 syn 提供了 0 个所有好友列表。
+2025-06-30 22:17:59,151 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3781) 的命令: ADD_FRIEND
+2025-06-30 22:17:59,301 - db - INFO - DatabaseManager: 用户 2 添加好友 3 成功。
+2025-06-30 22:17:59,301 - server - INFO - SecureChatServer: 用户 syn 添加 ztz (ID: 2) 为好友成功。
+2025-06-30 22:17:59,303 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3781) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:17:59,313 - db - INFO - DatabaseManager: 已为用户 3 检索到 0 个在线好友信息。
+2025-06-30 22:17:59,313 - server - INFO - SecureChatServer: 向 syn 提供了 0 个在线好友列表。
+2025-06-30 22:19:34,725 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3781) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:19:34,872 - db - INFO - DatabaseManager: 已为用户 3 检索到 0 个在线好友信息。
+2025-06-30 22:19:34,873 - server - INFO - SecureChatServer: 向 syn 提供了 0 个在线好友列表。
+2025-06-30 22:19:34,875 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 3781) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:19:34,878 - db - ERROR - DatabaseManager: 获取所有好友信息 UserID=3 时出错: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 390, in get_all_friends_info
+    cursor.execute(sql, user_id, user_id, user_id, user_id)
+pyodbc.ProgrammingError: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+2025-06-30 22:19:34,878 - server - INFO - SecureChatServer: 向 syn 提供了 0 个所有好友列表。
+2025-06-30 22:19:46,306 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4073) 的新连接。
+2025-06-30 22:19:46,308 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 4073) 启动。
+2025-06-30 22:19:46,309 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4073) 的命令: LOGIN
+2025-06-30 22:19:46,322 - db - INFO - DatabaseManager: 用户 'ztz' 认证成功。
+2025-06-30 22:19:46,334 - db - INFO - DatabaseManager: 用户 2 在线状态更新成功: 10.21.240.25:4074。
+2025-06-30 22:19:46,335 - server - INFO - SecureChatServer: 用户 ztz (ID: 2) 从 ('127.0.0.1', 4073) 登录。
+2025-06-30 22:19:46,336 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4073) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:19:46,342 - db - INFO - DatabaseManager: 已为用户 2 检索到 1 个在线好友信息。
+2025-06-30 22:19:46,343 - server - INFO - SecureChatServer: 向 ztz 提供了 1 个在线好友列表。
+2025-06-30 22:19:49,247 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4086) 的新连接。
+2025-06-30 22:19:49,248 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 4086) 启动。
+2025-06-30 22:19:49,249 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4086) 的命令: LOGIN
+2025-06-30 22:19:49,280 - db - INFO - DatabaseManager: 用户 'ztz' 认证成功。
+2025-06-30 22:19:49,281 - server - WARNING - SecureChatServer: 用户 ztz 尝试重复登录。
+2025-06-30 22:19:49,282 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 4086) 断开连接。
+2025-06-30 22:19:49,282 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 4086) 的连接已关闭。
+2025-06-30 22:19:57,800 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4114) 的新连接。
+2025-06-30 22:19:57,800 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 4114) 启动。
+2025-06-30 22:19:57,801 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4114) 的命令: LOGIN
+2025-06-30 22:19:57,802 - db - INFO - DatabaseManager: 用户 'ztz' 认证成功。
+2025-06-30 22:19:57,802 - server - WARNING - SecureChatServer: 用户 ztz 尝试重复登录。
+2025-06-30 22:19:57,802 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 4114) 断开连接。
+2025-06-30 22:19:57,802 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 4114) 的连接已关闭。
+2025-06-30 22:20:38,413 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4204) 的新连接。
+2025-06-30 22:20:38,414 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 4204) 启动。
+2025-06-30 22:20:38,415 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4204) 的命令: LOGIN
+2025-06-30 22:20:38,419 - db - INFO - DatabaseManager: 用户 'ddd' 认证成功。
+2025-06-30 22:20:38,443 - db - INFO - DatabaseManager: 用户 1 在线状态更新成功: 10.21.240.25:4205。
+2025-06-30 22:20:38,444 - server - INFO - SecureChatServer: 用户 ddd (ID: 1) 从 ('127.0.0.1', 4204) 登录。
+2025-06-30 22:20:38,445 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4204) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:20:38,452 - db - INFO - DatabaseManager: 已为用户 1 检索到 1 个在线好友信息。
+2025-06-30 22:20:38,453 - server - INFO - SecureChatServer: 向 ddd 提供了 1 个在线好友列表。
+2025-06-30 22:20:51,096 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 4204) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 22:20:51,096 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 4073) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 22:20:51,113 - db - INFO - DatabaseManager: 用户 1 在线状态已清除。
+2025-06-30 22:20:51,113 - server - INFO - SecureChatServer: 已清理用户 ddd (ID: 1) 的会话并更新离线状态。
+2025-06-30 22:20:51,113 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 4204) 的连接已关闭。
+2025-06-30 22:20:51,115 - db - INFO - DatabaseManager: 用户 2 在线状态已清除。
+2025-06-30 22:20:51,116 - server - INFO - SecureChatServer: 已清理用户 ztz (ID: 2) 的会话并更新离线状态。
+2025-06-30 22:20:51,116 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 4073) 的连接已关闭。
+2025-06-30 22:22:28,140 - __main__ - INFO - 服务器程序启动。
+2025-06-30 22:22:28,140 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 22:22:28,253 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 22:22:28,277 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 22:22:28,286 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 22:22:28,292 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 22:22:28,292 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 22:22:28,295 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 22:22:28,295 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 22:22:47,741 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4443) 的新连接。
+2025-06-30 22:22:47,749 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 4443) 启动。
+2025-06-30 22:22:47,750 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4443) 的命令: LOGIN
+2025-06-30 22:22:47,861 - db - INFO - DatabaseManager: 用户 'ddd' 认证成功。
+2025-06-30 22:22:47,895 - db - INFO - DatabaseManager: 用户 1 在线状态更新成功: 10.21.240.25:4444。
+2025-06-30 22:22:47,897 - server - INFO - SecureChatServer: 用户 ddd (ID: 1) 从 ('127.0.0.1', 4443) 登录。
+2025-06-30 22:22:47,897 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4443) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:22:47,901 - db - INFO - DatabaseManager: 已为用户 1 检索到 0 个在线好友信息。
+2025-06-30 22:22:47,901 - server - INFO - SecureChatServer: 向 ddd 提供了 0 个在线好友列表。
+2025-06-30 22:22:49,438 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4443) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:22:49,439 - db - INFO - DatabaseManager: 已为用户 1 检索到 0 个在线好友信息。
+2025-06-30 22:22:49,440 - server - INFO - SecureChatServer: 向 ddd 提供了 0 个在线好友列表。
+2025-06-30 22:22:49,440 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4443) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:22:49,442 - db - ERROR - DatabaseManager: 获取所有好友信息 UserID=1 时出错: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 390, in get_all_friends_info
+    cursor.execute(sql, user_id, user_id, user_id, user_id)
+pyodbc.ProgrammingError: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+2025-06-30 22:22:49,443 - server - INFO - SecureChatServer: 向 ddd 提供了 0 个所有好友列表。
+2025-06-30 22:22:57,896 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4443) 的命令: ADD_FRIEND
+2025-06-30 22:22:57,899 - db - INFO - DatabaseManager: 用户 1 和 2 已经是好友。
+2025-06-30 22:22:57,899 - server - WARNING - SecureChatServer: 用户 ddd 无法添加 ztz 为好友，可能已是好友。
+2025-06-30 22:23:26,486 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4548) 的新连接。
+2025-06-30 22:23:26,513 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 4548) 启动。
+2025-06-30 22:23:26,528 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4548) 的命令: LOGIN
+2025-06-30 22:23:26,623 - db - INFO - DatabaseManager: 用户 'ztz' 认证成功。
+2025-06-30 22:23:26,655 - db - INFO - DatabaseManager: 用户 2 在线状态更新成功: 10.21.240.25:4549。
+2025-06-30 22:23:26,655 - server - INFO - SecureChatServer: 用户 ztz (ID: 2) 从 ('127.0.0.1', 4548) 登录。
+2025-06-30 22:23:26,655 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4548) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:23:26,670 - db - INFO - DatabaseManager: 已为用户 2 检索到 0 个在线好友信息。
+2025-06-30 22:23:26,670 - server - INFO - SecureChatServer: 向 ztz 提供了 0 个在线好友列表。
+2025-06-30 22:23:28,240 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4548) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:23:28,242 - db - INFO - DatabaseManager: 已为用户 2 检索到 0 个在线好友信息。
+2025-06-30 22:23:28,244 - server - INFO - SecureChatServer: 向 ztz 提供了 0 个在线好友列表。
+2025-06-30 22:23:28,246 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4548) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:23:28,247 - db - ERROR - DatabaseManager: 获取所有好友信息 UserID=2 时出错: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 390, in get_all_friends_info
+    cursor.execute(sql, user_id, user_id, user_id, user_id)
+pyodbc.ProgrammingError: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+2025-06-30 22:23:28,249 - server - INFO - SecureChatServer: 向 ztz 提供了 0 个所有好友列表。
+2025-06-30 22:23:37,252 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4548) 的命令: ADD_FRIEND
+2025-06-30 22:23:37,255 - db - INFO - DatabaseManager: 用户 1 和 2 已经是好友。
+2025-06-30 22:23:37,255 - server - WARNING - SecureChatServer: 用户 ztz 无法添加 ddd 为好友，可能已是好友。
+2025-06-30 22:24:19,960 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4606) 的新连接。
+2025-06-30 22:24:19,960 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 4606) 启动。
+2025-06-30 22:24:19,968 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4606) 的命令: LOGIN
+2025-06-30 22:24:19,971 - db - INFO - DatabaseManager: 用户 'syn' 认证成功。
+2025-06-30 22:24:19,977 - db - INFO - DatabaseManager: 用户 3 在线状态更新成功: 10.21.240.25:4607。
+2025-06-30 22:24:19,977 - server - INFO - SecureChatServer: 用户 syn (ID: 3) 从 ('127.0.0.1', 4606) 登录。
+2025-06-30 22:24:19,979 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4606) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:24:19,979 - db - INFO - DatabaseManager: 已为用户 3 检索到 0 个在线好友信息。
+2025-06-30 22:24:19,979 - server - INFO - SecureChatServer: 向 syn 提供了 0 个在线好友列表。
+2025-06-30 22:24:21,524 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4606) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:24:21,525 - db - INFO - DatabaseManager: 已为用户 3 检索到 0 个在线好友信息。
+2025-06-30 22:24:21,525 - server - INFO - SecureChatServer: 向 syn 提供了 0 个在线好友列表。
+2025-06-30 22:24:21,527 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4606) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:24:21,528 - db - ERROR - DatabaseManager: 获取所有好友信息 UserID=3 时出错: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 390, in get_all_friends_info
+    cursor.execute(sql, user_id, user_id, user_id, user_id)
+pyodbc.ProgrammingError: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+2025-06-30 22:24:21,529 - server - INFO - SecureChatServer: 向 syn 提供了 0 个所有好友列表。
+2025-06-30 22:24:44,889 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4606) 的命令: ADD_FRIEND
+2025-06-30 22:24:44,918 - db - INFO - DatabaseManager: 用户 1 添加好友 3 成功。
+2025-06-30 22:24:44,918 - server - INFO - SecureChatServer: 用户 syn 添加 ddd (ID: 1) 为好友成功。
+2025-06-30 22:24:44,918 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4606) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:24:44,939 - db - INFO - DatabaseManager: 已为用户 3 检索到 0 个在线好友信息。
+2025-06-30 22:24:44,939 - server - INFO - SecureChatServer: 向 syn 提供了 0 个在线好友列表。
+2025-06-30 22:25:00,101 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4662) 的新连接。
+2025-06-30 22:25:00,101 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 4662) 启动。
+2025-06-30 22:25:00,101 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4662) 的命令: LOGIN
+2025-06-30 22:25:00,101 - db - INFO - DatabaseManager: 用户 'ddd' 认证成功。
+2025-06-30 22:25:00,101 - server - WARNING - SecureChatServer: 用户 ddd 尝试重复登录。
+2025-06-30 22:25:00,101 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 4662) 断开连接。
+2025-06-30 22:25:00,101 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 4662) 的连接已关闭。
+2025-06-30 22:26:23,212 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4805) 的新连接。
+2025-06-30 22:26:23,214 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 4805) 启动。
+2025-06-30 22:26:23,217 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4805) 的命令: LOGIN
+2025-06-30 22:26:23,263 - db - INFO - DatabaseManager: 用户 'ddd' 认证成功。
+2025-06-30 22:26:23,263 - server - WARNING - SecureChatServer: 用户 ddd 尝试重复登录。
+2025-06-30 22:26:23,265 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 4805) 断开连接。
+2025-06-30 22:26:23,265 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 4805) 的连接已关闭。
+2025-06-30 22:26:39,403 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4835) 的新连接。
+2025-06-30 22:26:39,406 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 4835) 启动。
+2025-06-30 22:26:39,407 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4835) 的命令: LOGIN
+2025-06-30 22:26:39,420 - db - INFO - DatabaseManager: 用户 'ddd' 认证成功。
+2025-06-30 22:26:39,422 - server - WARNING - SecureChatServer: 用户 ddd 尝试重复登录。
+2025-06-30 22:26:39,422 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 4835) 断开连接。
+2025-06-30 22:26:39,422 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 4835) 的连接已关闭。
+2025-06-30 22:27:02,382 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 4548) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 22:27:02,402 - db - WARNING - DatabaseManager: 尝试清除用户 2 在线状态，但记录不存在。
+2025-06-30 22:27:02,403 - server - INFO - SecureChatServer: 已清理用户 ztz (ID: 2) 的会话并更新离线状态。
+2025-06-30 22:27:02,404 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 4548) 的连接已关闭。
+2025-06-30 22:27:12,114 - __main__ - INFO - 服务器程序启动。
+2025-06-30 22:27:12,114 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 22:27:12,261 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 22:27:12,275 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 22:27:12,278 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 22:27:12,289 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 22:27:12,289 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 22:27:12,293 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 22:27:12,293 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 22:27:59,549 - __main__ - INFO - 服务器程序启动。
+2025-06-30 22:27:59,549 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 22:27:59,632 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 22:27:59,643 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 22:27:59,650 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 22:27:59,655 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 22:27:59,655 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 22:27:59,657 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 22:27:59,657 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 22:28:25,719 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4999) 的新连接。
+2025-06-30 22:28:25,719 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 4999) 启动。
+2025-06-30 22:28:25,719 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4999) 的命令: LOGIN
+2025-06-30 22:28:25,725 - db - INFO - DatabaseManager: 用户 'ddd' 认证成功。
+2025-06-30 22:28:25,747 - db - INFO - DatabaseManager: 用户 1 在线状态更新成功: 10.21.240.25:5002。
+2025-06-30 22:28:25,747 - server - INFO - SecureChatServer: 用户 ddd (ID: 1) 从 ('127.0.0.1', 4999) 登录。
+2025-06-30 22:28:25,751 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4999) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:28:25,756 - db - INFO - DatabaseManager: 已为用户 1 检索到 0 个在线好友信息。
+2025-06-30 22:28:25,756 - server - INFO - SecureChatServer: 向 ddd 提供了 0 个在线好友列表。
+2025-06-30 22:28:27,311 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4999) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:28:27,314 - db - INFO - DatabaseManager: 已为用户 1 检索到 0 个在线好友信息。
+2025-06-30 22:28:27,316 - server - INFO - SecureChatServer: 向 ddd 提供了 0 个在线好友列表。
+2025-06-30 22:28:27,318 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 4999) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:28:27,321 - db - ERROR - DatabaseManager: 获取所有好友信息 UserID=1 时出错: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 390, in get_all_friends_info
+    cursor.execute(sql, user_id, user_id, user_id, user_id)
+pyodbc.ProgrammingError: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+2025-06-30 22:28:27,327 - server - INFO - SecureChatServer: 向 ddd 提供了 0 个所有好友列表。
+2025-06-30 22:28:39,500 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5014) 的新连接。
+2025-06-30 22:28:39,500 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 5014) 启动。
+2025-06-30 22:28:39,503 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5014) 的命令: LOGIN
+2025-06-30 22:28:39,505 - db - INFO - DatabaseManager: 用户 'ztz' 认证成功。
+2025-06-30 22:28:39,511 - db - INFO - DatabaseManager: 用户 2 在线状态更新成功: 10.21.240.25:5015。
+2025-06-30 22:28:39,511 - server - INFO - SecureChatServer: 用户 ztz (ID: 2) 从 ('127.0.0.1', 5014) 登录。
+2025-06-30 22:28:39,511 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5014) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:28:39,511 - db - INFO - DatabaseManager: 已为用户 2 检索到 0 个在线好友信息。
+2025-06-30 22:28:39,511 - server - INFO - SecureChatServer: 向 ztz 提供了 0 个在线好友列表。
+2025-06-30 22:28:41,047 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5014) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:28:41,048 - db - INFO - DatabaseManager: 已为用户 2 检索到 0 个在线好友信息。
+2025-06-30 22:28:41,049 - server - INFO - SecureChatServer: 向 ztz 提供了 0 个在线好友列表。
+2025-06-30 22:28:41,049 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5014) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:28:41,060 - db - ERROR - DatabaseManager: 获取所有好友信息 UserID=2 时出错: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 390, in get_all_friends_info
+    cursor.execute(sql, user_id, user_id, user_id, user_id)
+pyodbc.ProgrammingError: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+2025-06-30 22:28:41,060 - server - INFO - SecureChatServer: 向 ztz 提供了 0 个所有好友列表。
+2025-06-30 22:29:04,196 - __main__ - INFO - 服务器程序启动。
+2025-06-30 22:29:04,196 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 22:29:04,338 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 22:29:04,353 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 22:29:04,360 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 22:29:04,368 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 22:29:04,368 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 22:29:04,368 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 22:29:04,368 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 22:30:48,699 - __main__ - INFO - 服务器程序启动。
+2025-06-30 22:30:48,700 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 22:30:48,825 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 22:30:48,843 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 22:30:48,851 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 22:30:48,859 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 22:30:48,859 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 22:30:48,860 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 22:30:48,862 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 22:31:58,562 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5352) 的新连接。
+2025-06-30 22:31:58,563 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 5352) 启动。
+2025-06-30 22:31:58,565 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5352) 的命令: REGISTER
+2025-06-30 22:31:58,605 - db - INFO - DatabaseManager: 用户 'A' 注册成功。
+2025-06-30 22:31:58,608 - server - INFO - SecureChatServer: 用户 A 已注册。
+2025-06-30 22:31:58,610 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 5352) 断开连接。
+2025-06-30 22:31:58,612 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 5352) 的连接已关闭。
+2025-06-30 22:32:06,290 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5362) 的新连接。
+2025-06-30 22:32:06,290 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 5362) 启动。
+2025-06-30 22:32:06,295 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5362) 的命令: LOGIN
+2025-06-30 22:32:06,309 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 22:32:06,324 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:5363。
+2025-06-30 22:32:06,325 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 5362) 登录。
+2025-06-30 22:32:06,327 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5362) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:32:06,332 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:32:06,332 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:32:08,869 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5362) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:32:08,901 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:32:08,901 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:32:08,901 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5362) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:32:08,901 - db - ERROR - DatabaseManager: 获取所有好友信息 UserID=4 时出错: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 390, in get_all_friends_info
+    cursor.execute(sql, user_id, user_id, user_id, user_id)
+pyodbc.ProgrammingError: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+2025-06-30 22:32:08,907 - server - INFO - SecureChatServer: 向 A 提供了 0 个所有好友列表。
+2025-06-30 22:32:28,604 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5391) 的新连接。
+2025-06-30 22:32:28,606 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 5391) 启动。
+2025-06-30 22:32:28,606 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5391) 的命令: REGISTER
+2025-06-30 22:32:28,639 - db - INFO - DatabaseManager: 用户 'B' 注册成功。
+2025-06-30 22:32:28,639 - server - INFO - SecureChatServer: 用户 B 已注册。
+2025-06-30 22:32:28,639 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 5391) 断开连接。
+2025-06-30 22:32:28,639 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 5391) 的连接已关闭。
+2025-06-30 22:32:35,875 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5415) 的新连接。
+2025-06-30 22:32:35,875 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 5415) 启动。
+2025-06-30 22:32:35,875 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5415) 的命令: LOGIN
+2025-06-30 22:32:35,875 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 22:32:35,906 - db - INFO - DatabaseManager: 用户 5 在线状态更新成功: 10.21.240.25:5416。
+2025-06-30 22:32:35,906 - server - INFO - SecureChatServer: 用户 B (ID: 5) 从 ('127.0.0.1', 5415) 登录。
+2025-06-30 22:32:35,906 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5415) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:32:35,914 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:32:35,914 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:32:37,858 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5415) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:32:37,875 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:32:37,877 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:32:37,877 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5415) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:32:37,880 - db - ERROR - DatabaseManager: 获取所有好友信息 UserID=5 时出错: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 390, in get_all_friends_info
+    cursor.execute(sql, user_id, user_id, user_id, user_id)
+pyodbc.ProgrammingError: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]关键字 'FROM' 附近有语法错误。 (156) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+2025-06-30 22:32:37,880 - server - INFO - SecureChatServer: 向 B 提供了 0 个所有好友列表。
+2025-06-30 22:33:00,551 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5415) 的命令: ADD_FRIEND
+2025-06-30 22:33:00,573 - db - INFO - DatabaseManager: 用户 4 添加好友 5 成功。
+2025-06-30 22:33:00,576 - server - INFO - SecureChatServer: 用户 B 添加 A (ID: 4) 为好友成功。
+2025-06-30 22:33:00,576 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5415) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:33:00,580 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:33:00,583 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:36:41,673 - __main__ - INFO - 服务器程序启动。
+2025-06-30 22:36:41,673 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 22:36:41,771 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 22:36:41,788 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 22:36:41,796 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 22:36:41,803 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 22:36:41,803 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 22:36:41,804 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 22:36:41,805 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 22:37:05,145 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5843) 的新连接。
+2025-06-30 22:37:05,145 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 5843) 启动。
+2025-06-30 22:37:05,147 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5843) 的命令: LOGIN
+2025-06-30 22:37:05,152 - db - WARNING - DatabaseManager: 用户 'A' 认证失败 (用户名或密码无效)。
+2025-06-30 22:37:05,152 - server - WARNING - SecureChatServer: 用户 A 登录失败，凭据无效。
+2025-06-30 22:37:05,156 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 5843) 断开连接。
+2025-06-30 22:37:05,156 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 5843) 的连接已关闭。
+2025-06-30 22:37:10,049 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5845) 的新连接。
+2025-06-30 22:37:10,049 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 5845) 启动。
+2025-06-30 22:37:10,057 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5845) 的命令: LOGIN
+2025-06-30 22:37:10,059 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 22:37:10,080 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:5846。
+2025-06-30 22:37:10,080 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 5845) 登录。
+2025-06-30 22:37:10,080 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5845) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:37:10,092 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:37:10,092 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:37:11,850 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5845) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:37:11,852 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:37:11,852 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:37:11,854 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5845) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:37:11,856 - db - ERROR - DatabaseManager: 获取所有好友信息 UserID=4 时出错: ('42S22', "[42S22] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]列名 'u' 无效。 (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 392, in get_all_friends_info
+    cursor.execute(sql, user_id, user_id, user_id, user_id)
+pyodbc.ProgrammingError: ('42S22', "[42S22] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]列名 'u' 无效。 (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+2025-06-30 22:37:11,856 - server - INFO - SecureChatServer: 向 A 提供了 0 个所有好友列表。
+2025-06-30 22:37:22,335 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5855) 的新连接。
+2025-06-30 22:37:22,335 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 5855) 启动。
+2025-06-30 22:37:22,335 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5855) 的命令: LOGIN
+2025-06-30 22:37:22,351 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 22:37:22,351 - db - INFO - DatabaseManager: 用户 5 在线状态更新成功: 10.21.240.25:5856。
+2025-06-30 22:37:22,351 - server - INFO - SecureChatServer: 用户 B (ID: 5) 从 ('127.0.0.1', 5855) 登录。
+2025-06-30 22:37:22,351 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5855) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:37:22,351 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:37:22,351 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:37:23,901 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5855) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:37:23,903 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:37:23,903 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:37:23,903 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5855) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:37:23,906 - db - ERROR - DatabaseManager: 获取所有好友信息 UserID=5 时出错: ('42S22', "[42S22] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]列名 'u' 无效。 (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\db.py", line 392, in get_all_friends_info
+    cursor.execute(sql, user_id, user_id, user_id, user_id)
+pyodbc.ProgrammingError: ('42S22', "[42S22] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]列名 'u' 无效。 (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]无法预定义语句。 (8180)")
+2025-06-30 22:37:23,907 - server - INFO - SecureChatServer: 向 B 提供了 0 个所有好友列表。
+2025-06-30 22:37:45,579 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5855) 的命令: ADD_FRIEND
+2025-06-30 22:37:45,605 - db - INFO - DatabaseManager: 用户 4 添加好友 5 成功。
+2025-06-30 22:37:45,615 - server - INFO - SecureChatServer: 用户 B 添加 A (ID: 4) 为好友成功。
+2025-06-30 22:37:45,616 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 5855) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:37:45,616 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:37:45,616 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:39:27,699 - __main__ - INFO - 服务器程序启动。
+2025-06-30 22:39:27,699 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 22:39:27,853 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 22:39:27,867 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 22:39:27,875 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 22:39:27,881 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 22:39:27,881 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 22:39:27,882 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 22:39:27,882 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 22:40:50,321 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6205) 的新连接。
+2025-06-30 22:40:50,321 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 6205) 启动。
+2025-06-30 22:40:50,321 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6205) 的命令: LOGIN
+2025-06-30 22:40:50,347 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 22:40:50,356 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:6206。
+2025-06-30 22:40:50,356 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 6205) 登录。
+2025-06-30 22:40:50,359 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6205) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:40:50,366 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:40:50,366 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:40:52,868 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6205) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:40:52,876 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:40:52,878 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:40:52,880 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6205) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:40:52,898 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个所有好友信息。
+2025-06-30 22:40:52,899 - server - INFO - SecureChatServer: 向 A 提供了 0 个所有好友列表。
+2025-06-30 22:40:59,884 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6222) 的新连接。
+2025-06-30 22:40:59,884 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 6222) 启动。
+2025-06-30 22:40:59,884 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6222) 的命令: LOGIN
+2025-06-30 22:40:59,896 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 22:40:59,912 - db - INFO - DatabaseManager: 用户 5 在线状态更新成功: 10.21.240.25:6223。
+2025-06-30 22:40:59,912 - server - INFO - SecureChatServer: 用户 B (ID: 5) 从 ('127.0.0.1', 6222) 登录。
+2025-06-30 22:40:59,912 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6222) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:40:59,918 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:40:59,918 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:41:01,873 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6222) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:41:01,875 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:41:01,876 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:41:01,876 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6222) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:41:01,881 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个所有好友信息。
+2025-06-30 22:41:01,881 - server - INFO - SecureChatServer: 向 B 提供了 0 个所有好友列表。
+2025-06-30 22:41:11,259 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6222) 的命令: ADD_FRIEND
+2025-06-30 22:41:11,283 - db - INFO - DatabaseManager: 用户 4 添加好友 5 成功。
+2025-06-30 22:41:11,285 - server - INFO - SecureChatServer: 用户 B 添加 A (ID: 4) 为好友成功。
+2025-06-30 22:41:11,285 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6222) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:41:11,291 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:41:11,292 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:42:30,690 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 6205) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 22:42:30,743 - db - INFO - DatabaseManager: 用户 4 在线状态已清除。
+2025-06-30 22:42:30,744 - server - INFO - SecureChatServer: 已清理用户 A (ID: 4) 的会话并更新离线状态。
+2025-06-30 22:42:30,744 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 6205) 的连接已关闭。
+2025-06-30 22:43:19,356 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6358) 的新连接。
+2025-06-30 22:43:19,358 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 6358) 启动。
+2025-06-30 22:43:19,358 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6358) 的命令: LOGIN
+2025-06-30 22:43:19,424 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 22:43:19,440 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:6359。
+2025-06-30 22:43:19,440 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 6358) 登录。
+2025-06-30 22:43:19,440 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6358) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:43:19,456 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:43:19,456 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:43:20,989 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6358) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:43:20,990 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:43:20,991 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:43:20,991 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6358) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:43:20,993 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个所有好友信息。
+2025-06-30 22:43:21,008 - server - INFO - SecureChatServer: 向 A 提供了 0 个所有好友列表。
+2025-06-30 22:43:30,271 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6358) 的命令: ADD_FRIEND
+2025-06-30 22:43:30,279 - db - INFO - DatabaseManager: 用户 4 添加好友 5 成功。
+2025-06-30 22:43:30,279 - server - INFO - SecureChatServer: 用户 A 添加 B (ID: 5) 为好友成功。
+2025-06-30 22:43:30,281 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6358) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:43:30,286 - db - INFO - DatabaseManager: 已为用户 4 检索到 1 个在线好友信息。
+2025-06-30 22:43:30,287 - server - INFO - SecureChatServer: 向 A 提供了 1 个在线好友列表。
+2025-06-30 22:43:32,093 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6358) 的命令: ADD_FRIEND
+2025-06-30 22:43:32,095 - db - INFO - DatabaseManager: 用户 4 和 5 已经是好友。
+2025-06-30 22:43:32,098 - server - WARNING - SecureChatServer: 用户 A 无法添加 B 为好友，可能已是好友。
+2025-06-30 22:43:57,370 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6358) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:43:57,372 - db - INFO - DatabaseManager: 已为用户 4 检索到 1 个在线好友信息。
+2025-06-30 22:43:57,373 - server - INFO - SecureChatServer: 向 A 提供了 1 个在线好友列表。
+2025-06-30 22:44:05,435 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6395) 的新连接。
+2025-06-30 22:44:05,435 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 6395) 启动。
+2025-06-30 22:44:05,442 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6395) 的命令: LOGIN
+2025-06-30 22:44:05,444 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 22:44:05,444 - server - WARNING - SecureChatServer: 用户 A 尝试重复登录。
+2025-06-30 22:44:05,444 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 6395) 断开连接。
+2025-06-30 22:44:05,444 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 6395) 的连接已关闭。
+2025-06-30 22:44:07,555 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6397) 的新连接。
+2025-06-30 22:44:07,555 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 6397) 启动。
+2025-06-30 22:44:07,555 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6397) 的命令: LOGIN
+2025-06-30 22:44:07,555 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 22:44:07,555 - server - WARNING - SecureChatServer: 用户 A 尝试重复登录。
+2025-06-30 22:44:07,569 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 6397) 断开连接。
+2025-06-30 22:44:07,569 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 6397) 的连接已关闭。
+2025-06-30 22:44:19,626 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6358) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:44:19,641 - db - INFO - DatabaseManager: 已为用户 4 检索到 1 个在线好友信息。
+2025-06-30 22:44:19,641 - server - INFO - SecureChatServer: 向 A 提供了 1 个在线好友列表。
+2025-06-30 22:44:22,497 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6358) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:44:22,498 - db - INFO - DatabaseManager: 已为用户 4 检索到 1 个在线好友信息。
+2025-06-30 22:44:22,498 - server - INFO - SecureChatServer: 向 A 提供了 1 个在线好友列表。
+2025-06-30 22:44:22,750 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6358) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:44:22,751 - db - INFO - DatabaseManager: 已为用户 4 检索到 1 个在线好友信息。
+2025-06-30 22:44:22,751 - server - INFO - SecureChatServer: 向 A 提供了 1 个在线好友列表。
+2025-06-30 22:45:56,915 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 6358) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 22:45:56,960 - db - INFO - DatabaseManager: 用户 4 在线状态已清除。
+2025-06-30 22:45:56,961 - server - INFO - SecureChatServer: 已清理用户 A (ID: 4) 的会话并更新离线状态。
+2025-06-30 22:45:56,961 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 6358) 的连接已关闭。
+2025-06-30 22:46:22,667 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6471) 的新连接。
+2025-06-30 22:46:22,667 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 6471) 启动。
+2025-06-30 22:46:22,675 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6471) 的命令: LOGIN
+2025-06-30 22:46:22,694 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 22:46:22,694 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:6472。
+2025-06-30 22:46:22,694 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 6471) 登录。
+2025-06-30 22:46:22,694 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6471) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:46:22,710 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:46:22,710 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:46:35,639 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6491) 的新连接。
+2025-06-30 22:46:35,641 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 6491) 启动。
+2025-06-30 22:46:35,643 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6491) 的命令: LOGIN
+2025-06-30 22:46:35,651 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 22:46:35,651 - server - WARNING - SecureChatServer: 用户 B 尝试重复登录。
+2025-06-30 22:46:35,651 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 6491) 断开连接。
+2025-06-30 22:46:35,651 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 6491) 的连接已关闭。
+2025-06-30 22:47:00,526 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6505) 的新连接。
+2025-06-30 22:47:00,526 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 6505) 启动。
+2025-06-30 22:47:00,543 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6505) 的命令: LOGIN
+2025-06-30 22:47:00,544 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 22:47:00,544 - server - WARNING - SecureChatServer: 用户 B 尝试重复登录。
+2025-06-30 22:47:00,544 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 6505) 断开连接。
+2025-06-30 22:47:00,544 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 6505) 的连接已关闭。
+2025-06-30 22:47:11,445 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6509) 的新连接。
+2025-06-30 22:47:11,445 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 6509) 启动。
+2025-06-30 22:47:11,447 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6509) 的命令: LOGIN
+2025-06-30 22:47:11,447 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 22:47:11,447 - server - WARNING - SecureChatServer: 用户 B 尝试重复登录。
+2025-06-30 22:47:11,451 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 6509) 断开连接。
+2025-06-30 22:47:11,451 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 6509) 的连接已关闭。
+2025-06-30 22:47:50,498 - __main__ - INFO - 服务器程序启动。
+2025-06-30 22:47:50,499 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 22:47:50,599 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 22:47:50,612 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 22:47:50,619 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 22:47:50,626 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 22:47:50,626 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 22:47:50,627 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 22:47:50,628 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 22:48:18,795 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6616) 的新连接。
+2025-06-30 22:48:18,796 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 6616) 启动。
+2025-06-30 22:48:18,797 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6616) 的命令: LOGIN
+2025-06-30 22:48:18,814 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 22:48:18,826 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:6617。
+2025-06-30 22:48:18,827 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 6616) 登录。
+2025-06-30 22:48:18,828 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6616) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:48:18,834 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:48:18,835 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:48:20,358 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6616) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:48:20,359 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:48:20,361 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:48:20,362 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6616) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:48:20,365 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个所有好友信息。
+2025-06-30 22:48:20,366 - server - INFO - SecureChatServer: 向 A 提供了 0 个所有好友列表。
+2025-06-30 22:48:24,828 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6635) 的新连接。
+2025-06-30 22:48:24,829 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 6635) 启动。
+2025-06-30 22:48:24,830 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6635) 的命令: LOGIN
+2025-06-30 22:48:24,834 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 22:48:24,836 - db - INFO - DatabaseManager: 用户 5 在线状态更新成功: 10.21.240.25:6636。
+2025-06-30 22:48:24,837 - server - INFO - SecureChatServer: 用户 B (ID: 5) 从 ('127.0.0.1', 6635) 登录。
+2025-06-30 22:48:24,837 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6635) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:48:24,838 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:48:24,839 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:48:26,386 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6635) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:48:26,389 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:48:26,390 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:48:26,391 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6635) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:48:26,391 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个所有好友信息。
+2025-06-30 22:48:26,393 - server - INFO - SecureChatServer: 向 B 提供了 0 个所有好友列表。
+2025-06-30 22:50:30,440 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6635) 的命令: ADD_FRIEND
+2025-06-30 22:50:30,490 - db - INFO - DatabaseManager: 用户 4 添加好友 5 成功。
+2025-06-30 22:50:30,491 - server - INFO - SecureChatServer: 用户 B 添加 A (ID: 4) 为好友成功。
+2025-06-30 22:50:30,491 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6635) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:50:30,496 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:50:30,496 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:51:50,724 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 6635) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 22:51:50,747 - db - INFO - DatabaseManager: 用户 5 在线状态已清除。
+2025-06-30 22:51:50,748 - server - INFO - SecureChatServer: 已清理用户 B (ID: 5) 的会话并更新离线状态。
+2025-06-30 22:51:50,748 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 6635) 的连接已关闭。
+2025-06-30 22:51:54,120 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 6616) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 22:51:54,141 - db - INFO - DatabaseManager: 用户 4 在线状态已清除。
+2025-06-30 22:51:54,142 - server - INFO - SecureChatServer: 已清理用户 A (ID: 4) 的会话并更新离线状态。
+2025-06-30 22:51:54,142 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 6616) 的连接已关闭。
+2025-06-30 22:52:24,773 - __main__ - INFO - 服务器程序启动。
+2025-06-30 22:52:24,773 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 22:52:24,868 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 22:52:24,878 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 22:52:24,883 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 22:52:24,890 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 22:52:24,890 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 22:52:24,891 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 22:52:24,891 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 22:53:05,465 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6834) 的新连接。
+2025-06-30 22:53:05,466 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 6834) 启动。
+2025-06-30 22:53:05,466 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6834) 的命令: LOGIN
+2025-06-30 22:53:05,510 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 22:53:05,523 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:6835。
+2025-06-30 22:53:05,525 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 6834) 登录。
+2025-06-30 22:53:05,525 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6834) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:53:05,527 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:53:05,528 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:53:07,054 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6834) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:53:07,056 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:53:07,057 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:53:07,057 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6834) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:53:07,062 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个所有好友信息。
+2025-06-30 22:53:07,063 - server - INFO - SecureChatServer: 向 A 提供了 0 个所有好友列表。
+2025-06-30 22:53:17,955 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6893) 的新连接。
+2025-06-30 22:53:17,955 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 6893) 启动。
+2025-06-30 22:53:17,957 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6893) 的命令: LOGIN
+2025-06-30 22:53:17,960 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 22:53:17,962 - db - INFO - DatabaseManager: 用户 5 在线状态更新成功: 10.21.240.25:6894。
+2025-06-30 22:53:17,962 - server - INFO - SecureChatServer: 用户 B (ID: 5) 从 ('127.0.0.1', 6893) 登录。
+2025-06-30 22:53:17,963 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6893) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:53:17,964 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:53:17,964 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:53:19,512 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6893) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:53:19,515 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:53:19,518 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:53:19,519 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6893) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:53:19,520 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个所有好友信息。
+2025-06-30 22:53:19,521 - server - INFO - SecureChatServer: 向 B 提供了 0 个所有好友列表。
+2025-06-30 22:53:37,031 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6893) 的命令: ADD_FRIEND
+2025-06-30 22:53:37,055 - db - INFO - DatabaseManager: 用户 4 添加好友 5 成功。
+2025-06-30 22:53:37,056 - server - INFO - SecureChatServer: 用户 B 添加 A (ID: 4) 为好友成功。
+2025-06-30 22:53:37,056 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 6893) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:53:37,058 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:53:37,058 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:57:31,445 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 6834) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 22:57:31,499 - db - INFO - DatabaseManager: 用户 4 在线状态已清除。
+2025-06-30 22:57:31,500 - server - INFO - SecureChatServer: 已清理用户 A (ID: 4) 的会话并更新离线状态。
+2025-06-30 22:57:31,500 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 6834) 的连接已关闭。
+2025-06-30 22:57:41,750 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 6893) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 22:57:41,755 - db - INFO - DatabaseManager: 用户 5 在线状态已清除。
+2025-06-30 22:57:41,756 - server - INFO - SecureChatServer: 已清理用户 B (ID: 5) 的会话并更新离线状态。
+2025-06-30 22:57:41,756 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 6893) 的连接已关闭。
+2025-06-30 22:58:20,650 - __main__ - INFO - 服务器程序启动。
+2025-06-30 22:58:20,650 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 22:58:20,733 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 22:58:20,744 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 22:58:20,747 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 22:58:20,747 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 22:58:20,747 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 22:58:20,747 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 22:58:20,747 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 22:58:42,273 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 7103) 的新连接。
+2025-06-30 22:58:42,274 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 7103) 启动。
+2025-06-30 22:58:42,275 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 7103) 的命令: LOGIN
+2025-06-30 22:58:42,298 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 22:58:42,312 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:7104。
+2025-06-30 22:58:42,313 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 7103) 登录。
+2025-06-30 22:58:42,314 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 7103) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:58:42,316 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:58:42,317 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:58:43,852 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 7103) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:58:43,853 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 22:58:43,853 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 22:58:43,854 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 7103) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:58:43,859 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个所有好友信息。
+2025-06-30 22:58:43,860 - server - INFO - SecureChatServer: 向 A 提供了 0 个所有好友列表。
+2025-06-30 22:58:55,299 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 7127) 的新连接。
+2025-06-30 22:58:55,300 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 7127) 启动。
+2025-06-30 22:58:55,300 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 7127) 的命令: LOGIN
+2025-06-30 22:58:55,305 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 22:58:55,307 - db - INFO - DatabaseManager: 用户 5 在线状态更新成功: 10.21.240.25:7128。
+2025-06-30 22:58:55,307 - server - INFO - SecureChatServer: 用户 B (ID: 5) 从 ('127.0.0.1', 7127) 登录。
+2025-06-30 22:58:55,308 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 7127) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:58:55,309 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:58:55,310 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:58:56,863 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 7127) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 22:58:56,866 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 22:58:56,866 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 22:58:56,867 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 7127) 的命令: GET_ALL_FRIENDS
+2025-06-30 22:58:56,868 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个所有好友信息。
+2025-06-30 22:58:56,869 - server - INFO - SecureChatServer: 向 B 提供了 0 个所有好友列表。
+2025-06-30 23:00:40,100 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 7127) 的命令: ADD_FRIEND
+2025-06-30 23:00:40,150 - db - INFO - DatabaseManager: 用户 4 添加好友 5 成功。
+2025-06-30 23:00:40,152 - server - INFO - SecureChatServer: 用户 B 添加 A (ID: 4) 为好友成功。
+2025-06-30 23:00:40,153 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 7127) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:00:40,154 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 23:00:40,155 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 23:01:48,037 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 7127) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 23:01:48,070 - db - INFO - DatabaseManager: 用户 5 在线状态已清除。
+2025-06-30 23:01:48,070 - server - INFO - SecureChatServer: 已清理用户 B (ID: 5) 的会话并更新离线状态。
+2025-06-30 23:01:48,070 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 7127) 的连接已关闭。
+2025-06-30 23:01:56,656 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 7103) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 23:01:56,671 - db - INFO - DatabaseManager: 用户 4 在线状态已清除。
+2025-06-30 23:01:56,671 - server - INFO - SecureChatServer: 已清理用户 A (ID: 4) 的会话并更新离线状态。
+2025-06-30 23:01:56,671 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 7103) 的连接已关闭。
+2025-06-30 23:25:51,896 - __main__ - INFO - 服务器程序启动。
+2025-06-30 23:25:51,896 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 23:25:51,936 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 23:25:51,937 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 23:25:51,937 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 23:25:51,938 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 23:25:51,938 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 23:25:51,939 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 23:25:51,939 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 23:26:15,132 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9435) 的新连接。
+2025-06-30 23:26:15,133 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 9435) 启动。
+2025-06-30 23:26:15,135 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9435) 的命令: LOGIN
+2025-06-30 23:26:15,175 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 23:26:15,190 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:9436。
+2025-06-30 23:26:15,191 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 9435) 登录。
+2025-06-30 23:26:15,192 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9435) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:26:15,195 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 23:26:15,196 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 23:26:16,732 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9435) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:26:16,734 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 23:26:16,734 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 23:26:16,738 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9435) 的命令: GET_ALL_FRIENDS
+2025-06-30 23:26:16,760 - db - INFO - DatabaseManager: 已为用户 4 检索到 1 个所有好友信息。
+2025-06-30 23:26:16,762 - server - INFO - SecureChatServer: 向 A 提供了 1 个所有好友列表。
+2025-06-30 23:28:04,264 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9435) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:28:04,300 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 23:28:04,301 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 23:28:04,303 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9435) 的命令: GET_ALL_FRIENDS
+2025-06-30 23:28:04,311 - db - INFO - DatabaseManager: 已为用户 4 检索到 1 个所有好友信息。
+2025-06-30 23:28:04,312 - server - INFO - SecureChatServer: 向 A 提供了 1 个所有好友列表。
+2025-06-30 23:28:11,257 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9728) 的新连接。
+2025-06-30 23:28:11,258 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 9728) 启动。
+2025-06-30 23:28:11,258 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9728) 的命令: LOGIN
+2025-06-30 23:28:11,269 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 23:28:11,280 - db - INFO - DatabaseManager: 用户 5 在线状态更新成功: 10.21.240.25:9729。
+2025-06-30 23:28:11,281 - server - INFO - SecureChatServer: 用户 B (ID: 5) 从 ('127.0.0.1', 9728) 登录。
+2025-06-30 23:28:11,281 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9728) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:28:11,283 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 23:28:11,284 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 23:28:12,824 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9728) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:28:12,842 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 23:28:12,843 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 23:28:12,844 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9728) 的命令: GET_ALL_FRIENDS
+2025-06-30 23:28:12,856 - db - INFO - DatabaseManager: 已为用户 5 检索到 1 个所有好友信息。
+2025-06-30 23:28:12,857 - server - INFO - SecureChatServer: 向 B 提供了 1 个所有好友列表。
+2025-06-30 23:28:47,366 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9728) 的命令: ADD_FRIEND
+2025-06-30 23:28:47,382 - db - INFO - DatabaseManager: 用户 4 和 5 已经是好友。
+2025-06-30 23:28:47,383 - server - WARNING - SecureChatServer: 用户 B 无法添加 A 为好友，可能已是好友。
+2025-06-30 23:29:15,158 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 9435) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 23:29:15,173 - db - INFO - DatabaseManager: 用户 4 在线状态已清除。
+2025-06-30 23:29:15,173 - server - INFO - SecureChatServer: 已清理用户 A (ID: 4) 的会话并更新离线状态。
+2025-06-30 23:29:15,173 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 9435) 的连接已关闭。
+2025-06-30 23:30:24,782 - __main__ - INFO - 服务器程序启动。
+2025-06-30 23:30:24,782 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 23:30:24,911 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 23:30:24,934 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 23:30:24,946 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 23:30:24,956 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 23:30:24,956 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 23:30:24,958 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 23:30:24,958 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 23:30:44,685 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9908) 的新连接。
+2025-06-30 23:30:44,685 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 9908) 启动。
+2025-06-30 23:30:44,686 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9908) 的命令: LOGIN
+2025-06-30 23:30:44,704 - db - WARNING - DatabaseManager: 用户 'B' 认证失败 (用户名或密码无效)。
+2025-06-30 23:30:44,705 - server - WARNING - SecureChatServer: 用户 B 登录失败，凭据无效。
+2025-06-30 23:30:44,706 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 9908) 断开连接。
+2025-06-30 23:30:44,706 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 9908) 的连接已关闭。
+2025-06-30 23:30:57,882 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9928) 的新连接。
+2025-06-30 23:30:57,883 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 9928) 启动。
+2025-06-30 23:30:57,884 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9928) 的命令: LOGIN
+2025-06-30 23:30:57,885 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 23:30:57,904 - db - INFO - DatabaseManager: 用户 5 在线状态更新成功: 10.21.240.25:9929。
+2025-06-30 23:30:57,905 - server - INFO - SecureChatServer: 用户 B (ID: 5) 从 ('127.0.0.1', 9928) 登录。
+2025-06-30 23:30:57,906 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9928) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:30:57,908 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 23:30:57,909 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 23:30:59,848 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9928) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:30:59,850 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 23:30:59,851 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 23:30:59,852 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9928) 的命令: GET_ALL_FRIENDS
+2025-06-30 23:30:59,858 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个所有好友信息。
+2025-06-30 23:30:59,859 - server - INFO - SecureChatServer: 向 B 提供了 0 个所有好友列表。
+2025-06-30 23:31:07,455 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9938) 的新连接。
+2025-06-30 23:31:07,455 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 9938) 启动。
+2025-06-30 23:31:07,457 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9938) 的命令: LOGIN
+2025-06-30 23:31:07,462 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 23:31:07,463 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:9939。
+2025-06-30 23:31:07,464 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 9938) 登录。
+2025-06-30 23:31:07,465 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9938) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:31:07,466 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 23:31:07,466 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 23:31:09,002 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9938) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:31:09,005 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 23:31:09,006 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 23:31:09,007 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9938) 的命令: GET_ALL_FRIENDS
+2025-06-30 23:31:09,009 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个所有好友信息。
+2025-06-30 23:31:09,012 - server - INFO - SecureChatServer: 向 A 提供了 0 个所有好友列表。
+2025-06-30 23:31:48,131 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9938) 的命令: ADD_FRIEND
+2025-06-30 23:31:48,146 - db - INFO - DatabaseManager: 用户 4 添加好友 5 成功。
+2025-06-30 23:31:48,147 - server - INFO - SecureChatServer: 用户 A 添加 B (ID: 5) 为好友成功。
+2025-06-30 23:31:48,148 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9938) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:31:48,150 - db - INFO - DatabaseManager: 已为用户 4 检索到 1 个在线好友信息。
+2025-06-30 23:31:48,151 - server - INFO - SecureChatServer: 向 A 提供了 1 个在线好友列表。
+2025-06-30 23:31:49,502 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 9938) 的命令: ADD_FRIEND
+2025-06-30 23:31:49,505 - db - INFO - DatabaseManager: 用户 4 和 5 已经是好友。
+2025-06-30 23:31:49,505 - server - WARNING - SecureChatServer: 用户 A 无法添加 B 为好友，可能已是好友。
+2025-06-30 23:33:00,720 - __main__ - INFO - 服务器程序启动。
+2025-06-30 23:33:00,720 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 23:33:00,841 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 23:33:00,859 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 23:33:00,865 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 23:33:00,872 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 23:33:00,873 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 23:33:00,874 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 23:33:00,875 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 23:33:32,319 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10107) 的新连接。
+2025-06-30 23:33:32,319 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 10107) 启动。
+2025-06-30 23:33:32,321 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10107) 的命令: LOGIN
+2025-06-30 23:33:32,331 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 23:33:32,342 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:10108。
+2025-06-30 23:33:32,343 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 10107) 登录。
+2025-06-30 23:33:32,345 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10107) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:33:32,347 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 23:33:32,347 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 23:33:33,889 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10107) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:33:33,891 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 23:33:33,891 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 23:33:33,893 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10107) 的命令: GET_ALL_FRIENDS
+2025-06-30 23:33:33,902 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个所有好友信息。
+2025-06-30 23:33:33,904 - server - INFO - SecureChatServer: 向 A 提供了 0 个所有好友列表。
+2025-06-30 23:34:14,503 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10107) 的命令: ADD_FRIEND
+2025-06-30 23:34:14,516 - db - INFO - DatabaseManager: 用户 4 添加好友 5 成功。
+2025-06-30 23:34:14,517 - server - INFO - SecureChatServer: 用户 A 添加 B (ID: 5) 为好友成功。
+2025-06-30 23:34:14,518 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10107) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:34:14,520 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 23:34:14,520 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 23:34:56,966 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10107) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:34:56,985 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 23:34:56,986 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 23:34:56,987 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10107) 的命令: GET_ALL_FRIENDS
+2025-06-30 23:34:57,006 - db - INFO - DatabaseManager: 已为用户 4 检索到 1 个所有好友信息。
+2025-06-30 23:34:57,008 - server - INFO - SecureChatServer: 向 A 提供了 1 个所有好友列表。
+2025-06-30 23:35:05,341 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10260) 的新连接。
+2025-06-30 23:35:05,342 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 10260) 启动。
+2025-06-30 23:35:05,343 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10260) 的命令: LOGIN
+2025-06-30 23:35:05,347 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 23:35:05,360 - db - INFO - DatabaseManager: 用户 5 在线状态更新成功: 10.21.240.25:10261。
+2025-06-30 23:35:05,361 - server - INFO - SecureChatServer: 用户 B (ID: 5) 从 ('127.0.0.1', 10260) 登录。
+2025-06-30 23:35:05,362 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10260) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:35:05,363 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 23:35:05,363 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 23:35:06,881 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10260) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:35:06,881 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 23:35:06,882 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 23:35:06,882 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10260) 的命令: GET_ALL_FRIENDS
+2025-06-30 23:35:06,883 - db - INFO - DatabaseManager: 已为用户 5 检索到 1 个所有好友信息。
+2025-06-30 23:35:06,884 - server - INFO - SecureChatServer: 向 B 提供了 1 个所有好友列表。
+2025-06-30 23:35:41,476 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 10260) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 23:35:41,487 - db - INFO - DatabaseManager: 用户 5 在线状态已清除。
+2025-06-30 23:35:41,488 - server - INFO - SecureChatServer: 已清理用户 B (ID: 5) 的会话并更新离线状态。
+2025-06-30 23:35:41,488 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 10260) 的连接已关闭。
+2025-06-30 23:41:17,294 - __main__ - INFO - 服务器程序启动。
+2025-06-30 23:41:17,294 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 23:41:17,434 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 23:41:17,452 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 23:41:17,458 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 23:41:17,470 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 23:41:17,471 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 23:41:17,472 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 23:41:17,472 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 23:41:35,649 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10749) 的新连接。
+2025-06-30 23:41:35,650 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 10749) 启动。
+2025-06-30 23:41:35,651 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10749) 的命令: LOGIN
+2025-06-30 23:41:35,671 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 23:41:35,684 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:10750。
+2025-06-30 23:41:35,685 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 10749) 登录。
+2025-06-30 23:41:35,686 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10749) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:41:35,688 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 23:41:35,689 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 23:41:37,755 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10749) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:41:37,756 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 23:41:37,756 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 23:41:37,757 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10749) 的命令: GET_ALL_FRIENDS
+2025-06-30 23:41:37,761 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个所有好友信息。
+2025-06-30 23:41:37,763 - server - INFO - SecureChatServer: 向 A 提供了 0 个所有好友列表。
+2025-06-30 23:41:47,827 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10789) 的新连接。
+2025-06-30 23:41:47,827 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 10789) 启动。
+2025-06-30 23:41:47,827 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10789) 的命令: LOGIN
+2025-06-30 23:41:47,833 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 23:41:47,835 - db - INFO - DatabaseManager: 用户 5 在线状态更新成功: 10.21.240.25:10790。
+2025-06-30 23:41:47,835 - server - INFO - SecureChatServer: 用户 B (ID: 5) 从 ('127.0.0.1', 10789) 登录。
+2025-06-30 23:41:47,836 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10789) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:41:47,837 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 23:41:47,837 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 23:41:49,370 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10789) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:41:49,371 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 23:41:49,372 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 23:41:49,374 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10789) 的命令: GET_ALL_FRIENDS
+2025-06-30 23:41:49,376 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个所有好友信息。
+2025-06-30 23:41:49,377 - server - INFO - SecureChatServer: 向 B 提供了 0 个所有好友列表。
+2025-06-30 23:42:04,345 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10789) 的命令: ADD_FRIEND
+2025-06-30 23:42:04,353 - db - INFO - DatabaseManager: 用户 4 添加好友 5 成功。
+2025-06-30 23:42:04,354 - server - INFO - SecureChatServer: 用户 B 添加 A (ID: 4) 为好友成功。
+2025-06-30 23:42:04,355 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10789) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:42:04,356 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 23:42:04,356 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 23:42:14,191 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10912) 的新连接。
+2025-06-30 23:42:14,192 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 10912) 启动。
+2025-06-30 23:42:14,193 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10912) 的命令: LOGIN
+2025-06-30 23:42:14,199 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 23:42:14,200 - server - WARNING - SecureChatServer: 用户 A 尝试重复登录。
+2025-06-30 23:42:14,201 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 10912) 断开连接。
+2025-06-30 23:42:14,201 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 10912) 的连接已关闭。
+2025-06-30 23:42:39,816 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10940) 的新连接。
+2025-06-30 23:42:39,817 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 10940) 启动。
+2025-06-30 23:42:39,820 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10940) 的命令: LOGIN
+2025-06-30 23:42:39,827 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 23:42:39,829 - server - WARNING - SecureChatServer: 用户 A 尝试重复登录。
+2025-06-30 23:42:39,830 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 10940) 断开连接。
+2025-06-30 23:42:39,831 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 10940) 的连接已关闭。
+2025-06-30 23:42:46,802 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10944) 的新连接。
+2025-06-30 23:42:46,803 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 10944) 启动。
+2025-06-30 23:42:46,805 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10944) 的命令: LOGIN
+2025-06-30 23:42:46,806 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 23:42:46,807 - server - WARNING - SecureChatServer: 用户 A 尝试重复登录。
+2025-06-30 23:42:46,808 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 10944) 断开连接。
+2025-06-30 23:42:46,808 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 10944) 的连接已关闭。
+2025-06-30 23:42:55,699 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10959) 的新连接。
+2025-06-30 23:42:55,701 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 10959) 启动。
+2025-06-30 23:42:55,704 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 10959) 的命令: LOGIN
+2025-06-30 23:42:55,705 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 23:42:55,707 - server - WARNING - SecureChatServer: 用户 A 尝试重复登录。
+2025-06-30 23:42:55,709 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 10959) 断开连接。
+2025-06-30 23:42:55,710 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 10959) 的连接已关闭。
+2025-06-30 23:43:16,679 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 10749) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 23:43:16,695 - db - WARNING - DatabaseManager: 尝试清除用户 4 在线状态，但记录不存在。
+2025-06-30 23:43:16,696 - server - INFO - SecureChatServer: 已清理用户 A (ID: 4) 的会话并更新离线状态。
+2025-06-30 23:43:16,696 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 10749) 的连接已关闭。
+2025-06-30 23:43:34,738 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11009) 的新连接。
+2025-06-30 23:43:34,738 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 11009) 启动。
+2025-06-30 23:43:34,739 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11009) 的命令: LOGIN
+2025-06-30 23:43:34,749 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 23:43:34,764 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:11010。
+2025-06-30 23:43:34,766 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 11009) 登录。
+2025-06-30 23:43:34,767 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11009) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:43:34,772 - db - INFO - DatabaseManager: 已为用户 4 检索到 1 个在线好友信息。
+2025-06-30 23:43:34,773 - server - INFO - SecureChatServer: 向 A 提供了 1 个在线好友列表。
+2025-06-30 23:43:36,548 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11011) 的新连接。
+2025-06-30 23:43:36,550 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 11011) 启动。
+2025-06-30 23:43:36,551 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11011) 的命令: LOGIN
+2025-06-30 23:43:36,567 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 23:43:36,568 - server - WARNING - SecureChatServer: 用户 A 尝试重复登录。
+2025-06-30 23:43:36,570 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 11011) 断开连接。
+2025-06-30 23:43:36,571 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 11011) 的连接已关闭。
+2025-06-30 23:44:04,534 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11045) 的新连接。
+2025-06-30 23:44:04,535 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 11045) 启动。
+2025-06-30 23:44:04,537 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11045) 的命令: LOGIN
+2025-06-30 23:44:04,542 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 23:44:04,543 - server - WARNING - SecureChatServer: 用户 A 尝试重复登录。
+2025-06-30 23:44:04,544 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 11045) 断开连接。
+2025-06-30 23:44:04,544 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 11045) 的连接已关闭。
+2025-06-30 23:44:29,908 - __main__ - INFO - 服务器程序启动。
+2025-06-30 23:44:29,908 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 23:44:30,050 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 23:44:30,061 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 23:44:30,068 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 23:44:30,076 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 23:44:30,076 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 23:44:30,077 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 23:44:30,077 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 23:44:33,349 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11064) 的新连接。
+2025-06-30 23:44:33,350 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 11064) 启动。
+2025-06-30 23:44:33,352 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11064) 的命令: LOGIN
+2025-06-30 23:44:33,378 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 23:44:33,394 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:11065。
+2025-06-30 23:44:33,396 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 11064) 登录。
+2025-06-30 23:44:33,397 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11064) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:44:33,399 - db - INFO - DatabaseManager: 已为用户 4 检索到 1 个在线好友信息。
+2025-06-30 23:44:33,400 - server - INFO - SecureChatServer: 向 A 提供了 1 个在线好友列表。
+2025-06-30 23:44:37,629 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 11064) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 23:44:37,642 - db - INFO - DatabaseManager: 用户 4 在线状态已清除。
+2025-06-30 23:44:37,642 - server - INFO - SecureChatServer: 已清理用户 A (ID: 4) 的会话并更新离线状态。
+2025-06-30 23:44:37,643 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 11064) 的连接已关闭。
+2025-06-30 23:45:03,014 - __main__ - INFO - 服务器程序启动。
+2025-06-30 23:45:03,014 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-06-30 23:45:03,105 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-06-30 23:45:03,121 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-06-30 23:45:03,128 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-06-30 23:45:03,136 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-06-30 23:45:03,136 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-06-30 23:45:03,137 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-06-30 23:45:03,138 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-06-30 23:45:21,470 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11101) 的新连接。
+2025-06-30 23:45:21,470 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 11101) 启动。
+2025-06-30 23:45:21,472 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11101) 的命令: LOGIN
+2025-06-30 23:45:21,483 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-06-30 23:45:21,490 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:11102。
+2025-06-30 23:45:21,492 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 11101) 登录。
+2025-06-30 23:45:21,493 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11101) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:45:21,495 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 23:45:21,495 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 23:45:23,863 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11101) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:45:23,865 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-06-30 23:45:23,866 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-06-30 23:45:23,868 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11101) 的命令: GET_ALL_FRIENDS
+2025-06-30 23:45:23,887 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个所有好友信息。
+2025-06-30 23:45:23,890 - server - INFO - SecureChatServer: 向 A 提供了 0 个所有好友列表。
+2025-06-30 23:45:35,079 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11119) 的新连接。
+2025-06-30 23:45:35,080 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 11119) 启动。
+2025-06-30 23:45:35,080 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11119) 的命令: LOGIN
+2025-06-30 23:45:35,086 - db - WARNING - DatabaseManager: 用户 'A' 认证失败 (用户名或密码无效)。
+2025-06-30 23:45:35,086 - server - WARNING - SecureChatServer: 用户 A 登录失败，凭据无效。
+2025-06-30 23:45:35,086 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 11119) 断开连接。
+2025-06-30 23:45:35,087 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 11119) 的连接已关闭。
+2025-06-30 23:45:40,502 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11121) 的新连接。
+2025-06-30 23:45:40,502 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 11121) 启动。
+2025-06-30 23:45:40,503 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11121) 的命令: LOGIN
+2025-06-30 23:45:40,504 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-06-30 23:45:40,505 - db - INFO - DatabaseManager: 用户 5 在线状态更新成功: 10.21.240.25:11122。
+2025-06-30 23:45:40,505 - server - INFO - SecureChatServer: 用户 B (ID: 5) 从 ('127.0.0.1', 11121) 登录。
+2025-06-30 23:45:40,505 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11121) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:45:40,506 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 23:45:40,506 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 23:45:42,851 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11121) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:45:42,852 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 23:45:42,852 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 23:45:42,852 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11121) 的命令: GET_ALL_FRIENDS
+2025-06-30 23:45:42,853 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个所有好友信息。
+2025-06-30 23:45:42,853 - server - INFO - SecureChatServer: 向 B 提供了 0 个所有好友列表。
+2025-06-30 23:50:28,998 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11121) 的命令: ADD_FRIEND
+2025-06-30 23:50:29,045 - db - INFO - DatabaseManager: 用户 4 添加好友 5 成功。
+2025-06-30 23:50:29,046 - server - INFO - SecureChatServer: 用户 B 添加 A (ID: 4) 为好友成功。
+2025-06-30 23:50:29,046 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 11121) 的命令: GET_ONLINE_FRIENDS
+2025-06-30 23:50:29,047 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-06-30 23:50:29,048 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-06-30 23:50:53,378 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 11101) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-06-30 23:50:53,395 - db - INFO - DatabaseManager: 用户 4 在线状态已清除。
+2025-06-30 23:50:53,397 - server - INFO - SecureChatServer: 已清理用户 A (ID: 4) 的会话并更新离线状态。
+2025-06-30 23:50:53,397 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 11101) 的连接已关闭。
+2025-07-01 00:05:21,008 - __main__ - INFO - 服务器程序启动。
+2025-07-01 00:05:21,008 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
+2025-07-01 00:05:21,108 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
+2025-07-01 00:05:21,129 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
+2025-07-01 00:05:21,136 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
+2025-07-01 00:05:21,144 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
+2025-07-01 00:05:21,144 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
+2025-07-01 00:05:21,145 - server - INFO - SecureChatServer: 服务器初始化完成。
+2025-07-01 00:05:21,146 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
+2025-07-01 00:06:22,984 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13047) 的新连接。
+2025-07-01 00:06:22,984 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 13047) 启动。
+2025-07-01 00:06:22,985 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13047) 的命令: LOGIN
+2025-07-01 00:06:23,000 - db - INFO - DatabaseManager: 用户 'A' 认证成功。
+2025-07-01 00:06:23,017 - db - INFO - DatabaseManager: 用户 4 在线状态更新成功: 10.21.240.25:13048。
+2025-07-01 00:06:23,018 - server - INFO - SecureChatServer: 用户 A (ID: 4) 从 ('127.0.0.1', 13047) 登录。
+2025-07-01 00:06:23,018 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13047) 的命令: GET_ONLINE_FRIENDS
+2025-07-01 00:06:23,022 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-07-01 00:06:23,023 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-07-01 00:06:24,541 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13047) 的命令: GET_ONLINE_FRIENDS
+2025-07-01 00:06:24,543 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个在线好友信息。
+2025-07-01 00:06:24,544 - server - INFO - SecureChatServer: 向 A 提供了 0 个在线好友列表。
+2025-07-01 00:06:24,544 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13047) 的命令: GET_ALL_FRIENDS
+2025-07-01 00:06:24,549 - db - INFO - DatabaseManager: 已为用户 4 检索到 0 个所有好友信息。
+2025-07-01 00:06:24,550 - server - INFO - SecureChatServer: 向 A 提供了 0 个所有好友列表。
+2025-07-01 00:06:46,919 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13090) 的新连接。
+2025-07-01 00:06:46,920 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 13090) 启动。
+2025-07-01 00:06:46,924 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13090) 的命令: LOGIN
+2025-07-01 00:06:46,942 - db - INFO - DatabaseManager: 用户 'B' 认证成功。
+2025-07-01 00:06:46,955 - db - INFO - DatabaseManager: 用户 5 在线状态更新成功: 10.21.240.25:13091。
+2025-07-01 00:06:46,955 - server - INFO - SecureChatServer: 用户 B (ID: 5) 从 ('127.0.0.1', 13090) 登录。
+2025-07-01 00:06:46,956 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13090) 的命令: GET_ONLINE_FRIENDS
+2025-07-01 00:06:46,958 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-07-01 00:06:46,959 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-07-01 00:06:48,499 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13090) 的命令: GET_ONLINE_FRIENDS
+2025-07-01 00:06:48,500 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-07-01 00:06:48,501 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-07-01 00:06:48,503 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13090) 的命令: GET_ALL_FRIENDS
+2025-07-01 00:06:48,516 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个所有好友信息。
+2025-07-01 00:06:48,517 - server - INFO - SecureChatServer: 向 B 提供了 0 个所有好友列表。
+2025-07-01 00:07:05,695 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13090) 的命令: ADD_FRIEND
+2025-07-01 00:07:05,705 - db - INFO - DatabaseManager: 用户 4 添加好友 5 成功。
+2025-07-01 00:07:05,706 - server - INFO - SecureChatServer: 用户 B 添加 A (ID: 4) 为好友成功。
+2025-07-01 00:07:05,706 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13090) 的命令: GET_ONLINE_FRIENDS
+2025-07-01 00:07:05,708 - db - INFO - DatabaseManager: 已为用户 5 检索到 0 个在线好友信息。
+2025-07-01 00:07:05,708 - server - INFO - SecureChatServer: 向 B 提供了 0 个在线好友列表。
+2025-07-01 00:07:27,651 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13117) 的新连接。
+2025-07-01 00:07:27,651 - server - INFO - SecureChatServer: 客户端处理线程为 ('127.0.0.1', 13117) 启动。
+2025-07-01 00:07:27,652 - server - INFO - SecureChatServer: 收到来自 ('127.0.0.1', 13117) 的命令: LOGIN
+2025-07-01 00:07:27,655 - db - WARNING - DatabaseManager: 用户 'ddd' 认证失败 (用户名或密码无效)。
+2025-07-01 00:07:27,656 - server - WARNING - SecureChatServer: 用户 ddd 登录失败，凭据无效。
+2025-07-01 00:07:27,656 - server - INFO - SecureChatServer: 客户端 ('127.0.0.1', 13117) 断开连接。
+2025-07-01 00:07:27,657 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 13117) 的连接已关闭。
+2025-07-01 00:07:57,915 - server - ERROR - SecureChatServer: 客户端 ('127.0.0.1', 13090) 处理程序发生错误: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\Projects\Python\Instant_Secure_Communication\server_new\server.py", line 63, in _handle_client
+    data = client_socket.recv(BUFFER_SIZE).decode('utf-8')
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-07-01 00:07:57,946 - db - INFO - DatabaseManager: 用户 5 在线状态已清除。
+2025-07-01 00:07:57,946 - server - INFO - SecureChatServer: 已清理用户 B (ID: 5) 的会话并更新离线状态。
+2025-07-01 00:07:57,946 - server - INFO - SecureChatServer: 与 ('127.0.0.1', 13090) 的连接已关闭。
