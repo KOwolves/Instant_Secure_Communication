@@ -1,9 +1,0 @@
-2025-06-30 16:58:57,183 - __main__ - INFO - 服务器程序启动。
-2025-06-30 16:58:57,183 - db - INFO - DatabaseManager: 正在初始化并尝试连接到数据库。
-2025-06-30 16:58:57,593 - db - INFO - DatabaseManager: 检查并创建 'Users' 表...
-2025-06-30 16:58:57,612 - db - INFO - DatabaseManager: 检查并创建 'Friendships' 表...
-2025-06-30 16:58:57,620 - db - INFO - DatabaseManager: 检查并创建 'OnlineStatus' 表...
-2025-06-30 16:58:57,878 - db - INFO - DatabaseManager: 数据库表检查/创建完成。
-2025-06-30 16:58:57,879 - db - INFO - DatabaseManager: 数据库管理器初始化完成。
-2025-06-30 16:58:57,880 - server - INFO - SecureChatServer: 服务器初始化完成。
-2025-06-30 16:58:57,881 - server - INFO - SecureChatServer: 服务器正在监听 127.0.0.1:50000
