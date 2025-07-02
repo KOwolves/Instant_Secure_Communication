@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安全即时通信系统</title>
+    <!-- 添加Socket.IO客户端库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="../static/emoji-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧菜单栏 -->
+        <div class="sidebar">
+            <div class="avatar">
+                <img src="../static/img/avatar.jpg" alt="用户头像" id="user-avatar">
+            </div>
+            <div class="menu-items">
+                <div class="menu-item active" data-panel="chats">
+                    <i class="fas fa-comment"></i>
+                </div>
+                <div class="menu-item" data-panel="contacts">
+                    <i class="fas fa-address-book"></i>
+                </div>
+                <div class="menu-item" data-panel="profile">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 聊天列表面板 -->
+        <div class="chat-list panel active" id="chats-panel">
+            <div class="header">
+                <div class="title">消息</div>
+                <div class="actions">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索聊天" id="chat-search-input">
+            </div>
+            <div class="list">
+                <!-- 聊天列表内容将动态加载 -->
+            </div>
+        </div>
+
+        <!-- 联系人面板 -->
+        <div class="contacts panel" id="contacts-panel">
+            <div class="header">
+                <div class="title">通讯录</div>
+                <div class="actions">
+                    <i class="fas fa-users" id="create-group-btn" title="创建群组"></i>
+                    <i class="fas fa-user-plus" id="add-friend-btn" title="添加好友"></i>
+                    <i class="fas fa-sync-alt" id="refresh-contacts-button" title="刷新联系人"></i>
+                    <i class="fas fa-stethoscope" id="diagnostics-button" title="连接诊断"></i>
+                    <i class="fas fa-ellipsis-h" id="manage-friends-btn"></i>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索联系人" id="contact-search-input">
+            </div>
+            <div class="list">
+                <!-- 联系人列表内容将动态加载 -->
+            </div>
+        </div>
+
+        <!-- 个人资料面板 -->
+        <div class="profile panel" id="profile-panel">
+            <div class="header">
+                <div class="title">我</div>
+                <div class="actions">
+                    <i class="fas fa-cog" id="settings-btn"></i>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="avatar">
+                    <img src="../static/img/avatar.jpg" alt="用户头像">
+                </div>
+                <div class="info">
+                    <div class="name">当前用户</div>
+                    <div class="id">账号: user123</div>
+                </div>
+                <i class="fas fa-qrcode"></i>
+            </div>
+            <div class="list">
+                <div class="profile-item">
+                    <i class="fas fa-key"></i>
+                    <div class="name">密钥管理</div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="profile-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="name">安全设置</div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="profile-item logout" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <div class="name">退出登录</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 聊天窗口 -->
+        <div class="chat-window">
+            <div class="header">
+                <div class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div class="title">选择联系人开始聊天</div>
+                <div class="actions">
+                    <i class="fas fa-info-circle" id="chat-info-btn" title="查看详情"></i>
+                    <i class="fas fa-users" id="group-members-btn" title="群组成员" style="display: none;"></i>
+                    <i class="fas fa-trash-alt" id="dissolve-group-btn" title="解散群聊" style="display: none;"></i>
+                </div>
+            </div>
+            <div class="messages">
+                <!-- 消息内容将动态加载 -->
+            </div>
+            <div class="input-area">
+                <div class="tools">
+                    <i class="fas fa-smile" id="emoji-picker-btn"></i>
+                    <i class="fas fa-image" id="image-upload-btn"></i>
+                    <input type="file" id="image-upload-input" accept="image/*" style="display: none;">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="输入消息..." class="message-input">
+                </div>
+                <div class="send-btn send-button">发送</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 弹出层 - 表情选择器 -->
+    <div class="modal" id="emoji-picker-modal">
+        <div class="modal-content emoji-picker-content">
+            <div class="modal-header">
+                <div class="title">选择表情</div>
+                <div class="close">&times;</div>
+            </div>
+            <div class="modal-body">
+                <div class="emoji-grid">
+                    <div class="emoji" data-emoji="😀">😀</div>
+                    <div class="emoji" data-emoji="😁">😁</div>
+                    <div class="emoji" data-emoji="😂">😂</div>
+                    <div class="emoji" data-emoji="🤣">🤣</div>
+                    <div class="emoji" data-emoji="😊">😊</div>
+                    <div class="emoji" data-emoji="😇">😇</div>
+                    <div class="emoji" data-emoji="🙂">🙂</div>
+                    <div class="emoji" data-emoji="🙃">🙃</div>
+                    <div class="emoji" data-emoji="😉">😉</div>
+                    <div class="emoji" data-emoji="😌">😌</div>
+                    <div class="emoji" data-emoji="😍">😍</div>
+                    <div class="emoji" data-emoji="🥰">🥰</div>
+                    <div class="emoji" data-emoji="😘">😘</div>
+                    <div class="emoji" data-emoji="😗">😗</div>
+                    <div class="emoji" data-emoji="😙">😙</div>
+                    <div class="emoji" data-emoji="😚">😚</div>
+                    <div class="emoji" data-emoji="😋">😋</div>
+                    <div class="emoji" data-emoji="😛">😛</div>
+                    <div class="emoji" data-emoji="😝">😝</div>
+                    <div class="emoji" data-emoji="😜">😜</div>
+                    <div class="emoji" data-emoji="🤪">🤪</div>
+                    <div class="emoji" data-emoji="🤑">🤑</div>
+                    <div class="emoji" data-emoji="🤗">🤗</div>
+                    <div class="emoji" data-emoji="🤭">🤭</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 弹出层 - 添加好友 -->
+    <div class="modal" id="add-friend-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="title">添加好友</div>
+                <div class="close">&times;</div>
+            </div>
+            <div class="modal-body">
+                <div class="input-field">
+                    <input type="text" placeholder="输入用户名或账号" id="search-friend-input">
+                </div>
+                <button class="search-btn">搜索</button>
+                <div class="search-result">
+                    <!-- 搜索结果将在这里显示 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 弹出层 - 好友管理 -->
+    <div class="modal" id="manage-friends-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="title">好友管理</div>
+                <div class="close">&times;</div>
+            </div>
+            <div class="modal-body">
+                <div class="tabs">
+                    <div class="tab active" data-tab="all-friends">全部好友</div>
+                    <div class="tab" data-tab="requests">好友请求</div>
+                </div>
+                <div class="tab-content active" id="all-friends-content">
+                    <!-- 好友列表将动态加载 -->
+                </div>
+                <div class="tab-content" id="requests-content">
+                    <!-- 好友请求将动态加载 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 弹出层 - 创建群组 -->
+    <div class="modal" id="create-group-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="title">创建群组</div>
+                <div class="close">&times;</div>
+            </div>
+            <div class="modal-body">
+                <div class="input-field">
+                    <input type="text" placeholder="群组名称" id="group-name-input">
+                </div>
+                <div class="group-members-header">
+                    <div>选择群组成员</div>
+                    <div class="selected-count">已选择: <span id="selected-members-count">0</span></div>
+                </div>
+                <div class="contact-selection">
+                    <!-- 联系人列表将在这里显示 -->
+                </div>
+                <div class="selected-members">
+                    <div class="selected-members-header">已选择的成员</div>
+                    <div id="selected-members-list">
+                        <!-- 已选择的成员将在这里显示 -->
+                    </div>
+                </div>
+                <button class="create-btn" id="confirm-create-group">创建群组</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 弹出层 - 群组成员 -->
+    <div class="modal" id="group-members-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="title">群组成员</div>
+                <div class="close">&times;</div>
+            </div>
+            <div class="modal-body">
+                <div class="group-info">
+                    <div class="avatar large-avatar">
+                        <!-- 群组头像将在这里显示 -->
+                    </div>
+                    <div class="group-name-display"></div>
+                    <div class="member-count"><span id="member-count">0</span>人</div>
+                </div>
+                <div class="members-list">
+                    <!-- 成员列表将在这里显示 -->
+                </div>
+                <div class="group-actions">
+                    <button class="danger-btn" id="dissolve-group-btn-modal">解散群聊</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/main.js"></script>
+</body>
+</html> 
