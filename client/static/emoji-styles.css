@@ -1,0 +1,35 @@
+/* 表情选择器样式 */
+.emoji-picker-content {
+    width: 300px;
+}
+
+.emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 5px;
+}
+
+.emoji {
+    font-size: 24px;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.emoji:hover {
+    background-color: #f0f0f0;
+}
+
+/* 图片消息样式 */
+.message .image-bubble {
+    max-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.message .image-bubble img {
+    width: 100%;
+    display: block;
+} 
