@@ -1,0 +1,29 @@
+# 加密相关依赖
+pycryptodome~=3.23.0
+rsa~=4.9.1
+cryptography~=43.0.0
+
+# 数据库相关依赖
+pymysql~=1.1.1
+
+pyodbc~=5.2.0
+flask~=3.0.3
+flask-socketio~=5.5.1
+eventlet~=0.39.1
+
+# 网络相关依赖（标准库，无需安装）
+# socket
+# select
+
+# 多线程相关依赖（标准库，无需安装）
+# threading
+
+# 实用工具依赖（标准库，无需安装）
+# hashlib - 用于哈希计算
+# re - 用于正则表达式
+# os - 用于文件和目录操作
+# json - 用于JSON处理
+# time - 用于时间相关操作
+# base64 - 用于编解码
+# datetime - 用于日期时间处理
+# random - 用于生成随机数
