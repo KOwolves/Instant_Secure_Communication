@@ -98,56 +98,56 @@
    - 连接到您的SQL Server实例
    - 执行以下SQL语句：
      ```sql
-    -- 创建数据库
-   CREATE DATABASE secure_communication;
-   GO
-   
-   -- 使用新创建的数据库
-   USE secure_communication;
-   GO
-   
-   -- 创建Users表
-   CREATE TABLE Users (
-       UserID INT IDENTITY(1,1) PRIMARY KEY,
-       Username NVARCHAR(50) NOT NULL UNIQUE,
-       Password NVARCHAR(64) NOT NULL,
-       PublicKey NVARCHAR(MAX) NOT NULL,
-       RegistrationDate DATETIME DEFAULT GETDATE()
-   );
-   
-   -- 创建Friendships表
-   CREATE TABLE Friendships (
-       UserID INT NOT NULL,
-       FriendID INT NOT NULL,
-       PRIMARY KEY (UserID, FriendID),
-       FOREIGN KEY (UserID) REFERENCES Users(UserID),
-       FOREIGN KEY (FriendID) REFERENCES Users(UserID),
-       CONSTRAINT CK_FriendshipOrder CHECK (UserID < FriendID),
-       CONSTRAINT CK_NotSelfFriend CHECK (UserID <> FriendID)
-   );
-   
-   -- 创建OnlineStatus表
-   CREATE TABLE OnlineStatus (
-       UserID INT PRIMARY KEY,
-       IPAddress VARCHAR(45) NOT NULL,
-       P2PPort INT NOT NULL,
-       LastActive DATETIME DEFAULT GETDATE(),
-       FOREIGN KEY (UserID) REFERENCES Users(UserID)
-   );
-   
-   -- 创建新的数据库登录和用户
-   CREATE LOGIN secure_chat_user WITH PASSWORD = 'SecureChat123!';
-   GO
-   
-   -- 将新登录用户与数据库用户关联
-   USE secure_communication;
-   GO
-   CREATE USER secure_chat_user FOR LOGIN secure_chat_user;
-   GO
-   
-   -- 授予数据库访问权限
-   EXEC sp_addrolemember 'db_owner', 'secure_chat_user';
-   GO
+      -- 创建数据库
+      CREATE DATABASE secure_communication;
+      GO
+      
+      -- 使用新创建的数据库
+      USE secure_communication;
+      GO
+      
+      -- 创建Users表
+      CREATE TABLE Users (
+          UserID INT IDENTITY(1,1) PRIMARY KEY,
+          Username NVARCHAR(50) NOT NULL UNIQUE,
+          Password NVARCHAR(64) NOT NULL,
+          PublicKey NVARCHAR(MAX) NOT NULL,
+          RegistrationDate DATETIME DEFAULT GETDATE()
+      );
+      
+      -- 创建Friendships表
+      CREATE TABLE Friendships (
+          UserID INT NOT NULL,
+          FriendID INT NOT NULL,
+          PRIMARY KEY (UserID, FriendID),
+          FOREIGN KEY (UserID) REFERENCES Users(UserID),
+          FOREIGN KEY (FriendID) REFERENCES Users(UserID),
+          CONSTRAINT CK_FriendshipOrder CHECK (UserID < FriendID),
+          CONSTRAINT CK_NotSelfFriend CHECK (UserID <> FriendID)
+      );
+      
+      -- 创建OnlineStatus表
+      CREATE TABLE OnlineStatus (
+          UserID INT PRIMARY KEY,
+          IPAddress VARCHAR(45) NOT NULL,
+          P2PPort INT NOT NULL,
+          LastActive DATETIME DEFAULT GETDATE(),
+          FOREIGN KEY (UserID) REFERENCES Users(UserID)
+      );
+      
+      -- 创建新的数据库登录和用户
+      CREATE LOGIN secure_chat_user WITH PASSWORD = 'SecureChat123!';
+      GO
+      
+      -- 将新登录用户与数据库用户关联
+      USE secure_communication;
+      GO
+      CREATE USER secure_chat_user FOR LOGIN secure_chat_user;
+      GO
+      
+      -- 授予数据库访问权限
+      EXEC sp_addrolemember 'db_owner', 'secure_chat_user';
+      GO
      ```
 
 ## 6. 配置服务器
