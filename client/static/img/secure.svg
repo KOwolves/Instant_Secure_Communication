@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="130" height="130">
+  <style>
+    .st0{fill:#FFFFFF;}
+    .st1{fill:#F0F0F0;}
+    .st2{fill:#3498DB;}
+    .st3{fill:#2980B9;}
+  </style>
+  <g>
+    <path class="st0" d="M500,150L200,250v200c0,165.7,128.3,319.3,300,350c171.7-30.7,300-184.3,300-350V250L500,150z"/>
+    <path class="st1" d="M500,200L250,283.3v166.7c0,138.1,107,266.1,250,291.7c143-25.6,250-153.6,250-291.7V283.3L500,200z"/>
+    <path class="st2" d="M500,250L300,316.7v133.3c0,110.5,85.6,212.9,200,233.3c114.4-20.5,200-122.9,200-233.3V316.7L500,250z"/>
+    <rect class="st3" x="400" y="400" width="200" height="150"/>
+    <circle class="st0" cx="500" cy="450" r="30"/>
+    <rect class="st0" x="485" y="450" width="30" height="70"/>
+  </g>
+</svg> 

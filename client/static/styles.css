@@ -1,0 +1,1037 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    transition: background 0.8s ease;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #fff;
+    max-width: 1200px;
+    min-height: 600px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.forms-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.signin-signup {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 75%;
+    width: 50%;
+    transition: 1s 0.7s ease-in-out;
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 5;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 5rem;
+    transition: all 0.2s 0.7s;
+    overflow: hidden;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+form.sign-up-form {
+    opacity: 0;
+    z-index: 1;
+}
+
+form.sign-in-form {
+    z-index: 2;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+}
+
+.title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(to right, #3498db, #87CEEB);
+    border-radius: 2px;
+}
+
+.input-field {
+    max-width: 380px;
+    width: 100%;
+    height: 55px;
+    background-color: #f5f5f5;
+    margin: 10px 0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.input-field:focus-within {
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+    transform: translateY(-2px);
+}
+
+.input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #999;
+    transition: 0.5s;
+    font-size: 1.1rem;
+}
+
+.input-field:focus-within i {
+    color: #3498db;
+}
+
+.input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.input-field input::placeholder {
+    color: #aaa;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.input-field input:focus::placeholder {
+    opacity: 0.7;
+    transform: translateX(5px);
+}
+
+.btn {
+    width: 180px;
+    background: linear-gradient(to right, #3498db, #6ab6ea);
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.1rem; /* 增加字体大小 */
+    margin: 20px 0;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: width 0.5s ease;
+    border-radius: 49px;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #2980b9, #3498db);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.social-text {
+    padding: 0.7rem 0;
+    font-size: 1rem;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    height: 46px;
+    width: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.45rem;
+    color: #333;
+    border-radius: 50%;
+    border: 1px solid #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    color: #3498db;
+    border-color: #3498db;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.panels-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.container:before {
+    content: "";
+    position: absolute;
+    height: 2000px;
+    width: 2000px;
+    top: -10%;
+    right: 48%;
+    transform: translateY(-50%);
+    background-image: linear-gradient(135deg, #3498db, #6ab6ea, #87CEEB);
+    transition: 1.8s ease-in-out;
+    border-radius: 50%;
+    z-index: 6;
+    box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.5);
+}
+
+.image {
+    width: 85%;
+    transition: transform 1.1s ease-in-out;
+    transition-delay: 0.4s;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    text-align: center;
+    z-index: 6;
+}
+
+.panel img.image {
+    transition: all 0.6s ease;
+}
+
+/* 移除悬停效果 */
+
+.left-panel {
+    pointer-events: all;
+    padding: 2.5rem 17% 2rem 10%;
+}
+
+.left-panel .image {
+    transform: translateX(-20px) translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 页面加载后和切换到登录模式后显示聊天气泡图标 */
+.container:not(.sign-up-mode) .left-panel .image {
+    animation: showChatIcon 0.6s ease forwards;
+}
+
+/* 从注册模式切换到登录模式时，延迟显示聊天气泡图标 */
+.sign-up-mode-exit .left-panel .image {
+    animation-delay: 1.8s !important; /* 再提前0.2秒出现 */
+}
+
+@keyframes showChatIcon {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* 注册模式下隐藏聊天气泡图标 */
+/* 注册模式下立即隐藏聊天图标 */
+.container.sign-up-mode .left-panel .image {
+    animation: none; /* 覆盖可能的动画 */
+    opacity: 0;
+    visibility: hidden;
+}
+
+.right-panel {
+    pointer-events: none;
+    padding: 2.5rem 10% 2rem 17%;
+}
+
+.right-panel .image {
+    transform: translateX(20px) translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* 立即隐藏 */
+}
+
+/* 注册模式下显示盾牌图标 */
+.container.sign-up-mode .right-panel .image {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(0px) translateY(-20px); /* 保持之前的位置 */
+    animation: showSecureIcon 0.6s ease 1.8s forwards; /* 再提前0.2秒出现 */
+}
+
+@keyframes showSecureIcon {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.panel .content {
+    color: #fff;
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.6s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.panel h3 {
+    font-weight: 600;
+    line-height: 1;
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.panel p {
+    font-size: 1rem;
+    padding: 0.7rem 0;
+    line-height: 1.6;
+}
+
+.btn.transparent {
+    margin: 15px 0 0;
+    background: transparent;
+    border: 2px solid #fff;
+    width: 140px;
+    height: 45px;
+    font-weight: 600;
+    font-size: 1.1rem; /* 增大字体大小 */
+    transition: all 0.4s ease;
+}
+
+.btn.transparent:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.right-panel .content {
+    transform: translateX(800px);
+}
+
+/* 动画 */
+
+.container.sign-up-mode:before {
+    transform: translate(100%, -50%);
+    right: 52%;
+}
+
+.container.sign-up-mode .left-panel .content {
+    transform: translateX(-800px);
+}
+
+/* 已被我们的可见性规则取代 */
+
+.container.sign-up-mode .signin-signup {
+    left: 25%;
+}
+
+.container.sign-up-mode form.sign-up-form {
+    opacity: 1;
+    z-index: 2;
+}
+
+.container.sign-up-mode form.sign-in-form {
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.sign-up-mode .right-panel .content {
+    transform: translateX(0%);
+}
+
+/* 防止重复定义，已在上面通过动画实现 */
+
+.container.sign-up-mode .left-panel {
+    pointer-events: none;
+}
+
+.container.sign-up-mode .right-panel {
+    pointer-events: all;
+}
+
+/* 提示框样式 */
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.alert.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.alert.error {
+    background-color: #f44336;
+    color: white;
+}
+
+/* 响应式设计 */
+@media (max-width: 870px) {
+    .container {
+        min-height: 800px;
+        height: 100vh;
+    }
+    .signin-signup {
+        width: 100%;
+        top: 95%;
+        transform: translate(-50%, -100%);
+        transition: 1s 0.8s ease-in-out;
+    }
+
+    .signin-signup,
+    .container.sign-up-mode .signin-signup {
+        left: 50%;
+    }
+
+    .panels-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+    }
+
+    .panel {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2.5rem 8%;
+        grid-column: 1 / 2;
+    }
+
+    .right-panel {
+        grid-row: 3 / 4;
+    }
+
+    .left-panel {
+        grid-row: 1 / 2;
+    }
+
+    .image {
+        width: 160px;
+        transition: transform 0.9s ease-in-out;
+        transition-delay: 0.6s;
+        margin-top: -15px;
+    }
+
+    .panel .content {
+        padding-right: 15%;
+        transition: transform 0.9s ease-in-out;
+        transition-delay: 0.8s;
+    }
+
+    .panel h3 {
+        font-size: 1.2rem;
+    }
+
+    .panel p {
+        font-size: 0.7rem;
+        padding: 0.5rem 0;
+    }
+
+    .btn.transparent {
+        width: 110px;
+        height: 35px;
+        font-size: 0.85rem; /* 增大移动设备上的字体大小 */
+    }
+
+    .container:before {
+        width: 1500px;
+        height: 1500px;
+        transform: translateX(-50%);
+        left: 30%;
+        bottom: 68%;
+        right: initial;
+        top: initial;
+        transition: 2s ease-in-out;
+    }
+
+    .container.sign-up-mode:before {
+        transform: translate(-50%, 100%);
+        bottom: 32%;
+        right: initial;
+    }
+
+    .container.sign-up-mode .left-panel .content {
+        transform: translateY(-300px);
+    }
+
+    .container.sign-up-mode .right-panel .content {
+        transform: translateY(0px);
+    }
+
+    .right-panel .content {
+        transform: translateY(300px);
+    }
+
+    .container.sign-up-mode .signin-signup {
+        top: 5%;
+        transform: translate(-50%, 0);
+    }
+}
+
+@media (max-width: 570px) {
+    form {
+        padding: 0 1.5rem;
+    }
+
+    .image {
+        width: 120px;
+        margin-top: -25px;
+    }
+
+    /* 移动设备上的图标显示规则 */
+    .left-panel .image {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .container:not(.sign-up-mode) .left-panel .image {
+        animation: showChatIcon 0.6s ease 2.5s forwards; /* 移动设备可能需要更长的延迟 */
+    }
+
+    .right-panel .image {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .container.sign-up-mode .left-panel .image {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .container.sign-up-mode .right-panel .image {
+        animation: showSecureIcon 0.6s ease 2.4s forwards; /* 再提前0.2秒出现 */
+    }
+    
+    /* 移动设备上从注册模式切换到登录模式时，延迟显示聊天气泡图标 */
+    .sign-up-mode-exit .left-panel .image {
+        animation-delay: 2.4s !important; /* 再提前0.2秒出现 */
+    }
+    
+    /* 使用全局定义的动画 */
+    
+    .panel .content {
+        padding: 0.5rem 1rem;
+    }
+    
+    .container {
+        padding: 1.5rem;
+    }
+
+    .container:before {
+        bottom: 72%;
+        left: 50%;
+    }
+
+    .container.sign-up-mode:before {
+        bottom: 28%;
+        left: 50%;
+    }
+    
+    .left-panel {
+        padding: 1.5rem 5% 1rem 8%;
+    }
+    
+    .right-panel {
+        padding: 1.5rem 8% 1rem 5%;
+    }
+}
+
+/* 错误通知样式 */
+.error-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+    z-index: 9999;
+    animation: fadeIn 0.4s, fadeOut 0.4s 2.7s;
+    max-width: 320px;
+    border-left: 4px solid #e74c3c;
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+/* 错误消息样式 */
+.error-message {
+    color: #e74c3c;
+    text-align: center;
+    padding: 18px;
+    background-color: #ffeaea;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(231, 76, 60, 0.15);
+    border-left: 4px solid #e74c3c;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.error-message:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.25);
+}
+
+/* 重试按钮样式 */
+.retry-btn {
+    background: linear-gradient(to right, #3498db, #6ab6ea);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 600;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.retry-btn:hover {
+    background: linear-gradient(to right, #2980b9, #3498db);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* 加载指示器样式 */
+.loading-indicator {
+    text-align: center;
+    padding: 25px;
+    color: #3498db;
+    font-weight: 600;
+    position: relative;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.loading-indicator:after {
+    content: "...";
+    animation: dots 1.8s infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: "."; }
+    40% { content: ".."; }
+    60%, 100% { content: "..."; }
+}
+
+/* 登出加载指示器样式 */
+.logout-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-left: 4px solid #3498db;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
+}
+
+.loading-text {
+    color: white;
+    font-size: 18px;
+    margin-top: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* 添加新的动画效果 */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 波纹效果 */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-effect 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-effect {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* 输入框活动状态 */
+.input-field.active {
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+}
+
+.input-field.active i {
+    color: #3498db;
+}
+
+/* 抖动效果 */
+.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+/* 按钮加载状态 */
+.btn-loading {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    margin-right: 8px;
+    animation: btn-spin 0.8s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes btn-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 按钮禁用状态 */
+.btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+/* 增强表单过渡效果 */
+.container.sign-up-mode:before {
+    transition: 1.5s ease-in-out;
+}
+
+.container.sign-up-mode .left-panel .image,
+.container.sign-up-mode .left-panel .content {
+    transition: transform 0.9s ease-in-out;
+}
+
+.container.sign-up-mode .right-panel .image,
+.container.sign-up-mode .right-panel .content {
+    transition: transform 0.9s ease-in-out;
+}
+
+/* 优化移动端适配 */
+@media (max-width: 870px) {
+    .container.sign-up-mode .signin-signup {
+        transition: all 0.9s ease-in-out;
+    }
+}
+
+/* 音频转写样式 */
+.transcript-container {
+    margin-top: 8px;
+    padding: 6px 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    font-size: 0.9em;
+    position: relative;
+    max-width: 100%;
+}
+
+.transcript-text {
+    color: #444;
+    line-height: 1.4;
+    word-break: break-word;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.transcript-loading {
+    color: #666;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.transcript-toggle-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: #666;
+    font-size: 0.8em;
+    margin: 4px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.transcript-toggle-btn:hover {
+    opacity: 1;
+    background-color: #e0e0e0;
+}
+
+/* 音频消息容器样式 */
+.audio-message-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 180px;
+}
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    width: 100%;
+}
+
+.audio-play-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.audio-play-btn i {
+    font-size: 12px;
+}
+
+.audio-waveform {
+    flex: 1;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.audio-waveform:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30%;
+    background-color: rgba(0, 123, 255, 0.3);
+    border-radius: 10px;
+}
+
+.audio-duration {
+    font-size: 12px;
+    color: #666;
+    width: 36px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* 确保转写按钮在音频消息外部 */
+.audio-message-container .transcript-toggle-btn {
+    position: absolute;
+    right: -28px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+}
+
+/* 消息样式修复 */
+.message .content {
+    max-width: 80%;
+}
+
+.message.sent .content {
+    margin-left: auto;
+    margin-right: 8px;
+}
+
+.message.received .content {
+    margin-right: auto;
+    margin-left: 8px;
+}
+
+.message .bubble {
+    padding: 10px 15px;
+    border-radius: 18px;
+    position: relative;
+    word-wrap: break-word;
+    max-width: 100%;
+} 
