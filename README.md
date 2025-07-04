@@ -15,7 +15,7 @@
 1. **用户注册与登录**  
    - 用户可通过唯一用户名、密码和邮箱完成注册，客户端对密码进行 SHA-256 哈希后再传输。  
    - 登录时提交用户名和哈希后的密码，服务器验证通过后返回 JWT 或会话标识。
-![image text](https://github.com/KOwolves/Instant_Secure_Communication/blob/master/data/%E5%9B%BE%E7%89%871.png)
+![image text](https://github.com/KOwolves/Instant_Secure_Communication/blob/master/Photo/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250704170559.png)
 1. **密钥管理**  
    - 注册时生成 RSA-2048 公私钥对，私钥经用户登录密码派生的 AES 密钥加密后本地存储，公钥上传服务器。  
    - 登录后解密加载私钥到内存；登出或超时后立即清除。
@@ -29,12 +29,13 @@
      1. 客户端 A 向服务器请求 B 的公钥。  
      2. A 生成一次性 AES-256 会话密钥，用 B 的公钥加密后发送给 B。  
      3. 双方在 P2P 连接上使用 AES-GCM 加密／认证所有消息。  
-         ![image text](https://github.com/KOwolves/Instant_Secure_Communication/blob/master/data/565b0690aaa73b4d4e9418f9c22ca6a.png)
+         ![image text](https://github.com/KOwolves/Instant_Secure_Communication/blob/master/Photo/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250704170609.png)
 
 5. **多媒体消息**  
    - **图片传输**：支持普通图片和隐写图片发送。  
    - **隐写功能**：在 PNG 文件 LSB 中嵌入秘密文本，发送前对隐写图及隐藏消息再次进行 RSA+AES 加密，接收方点击“锁”形图标可提取并在安全模态框中查看。  
    - **语音聊天**：基于 UDP 的实时语音流采集与加密传输，客户端录制时显示波形。
+   - **语音转文字**：调用大模型 API 将录制的语音实时转写为文字，转写结果会显示在主界面中，用户可预览。
 
 6. **离线与存储**  
    - **离线消息**：对离线用户的消息在服务器端以密文形式暂存，用户上线后自动补发。  
