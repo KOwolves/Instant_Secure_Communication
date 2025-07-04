@@ -178,6 +178,11 @@ P2P_LISTEN_PORT = 0          # 自动选择端口
 # 密钥文件路径
 PRIVATE_KEY_FILE = './private_key.pem'  # 修改为适合您的路径
 PUBLIC_KEY_FILE = './public_key.pem'    # 修改为适合您的路径
+
+# 讯飞语音识别API配置
+XUNFEI_APPID = ''  # 讯飞开放平台应用ID
+XUNFEI_API_KEY = ''  # 讯飞开放平台API Key
+XUNFEI_API_SECRET = ''  # 讯飞开放平台API Secret
 ```
 
 ## 8. 启动系统
