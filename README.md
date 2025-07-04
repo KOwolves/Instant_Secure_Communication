@@ -92,98 +92,92 @@
    - 确保安装ODBC Driver 17 for SQL Server
 
 ## 5. 数据库配置
-```sql
-1. 创建数据库和用户：
-   - 打开SQL Server Management Studio
-   - 连接到您的SQL Server实例
-   - 执行以下SQL语句：
-     ```sql
-      -- 创建数据库
-      CREATE DATABASE secure_communication;
-      GO
-      
-      -- 使用新创建的数据库
-      USE secure_communication;
-      GO
-      
-      -- 创建Users表
-      CREATE TABLE Users (
-          UserID INT IDENTITY(1,1) PRIMARY KEY,
-          Username NVARCHAR(50) NOT NULL UNIQUE,
-          Password NVARCHAR(64) NOT NULL,
-          PublicKey NVARCHAR(MAX) NOT NULL,
-          RegistrationDate DATETIME DEFAULT GETDATE()
-      );
-      
-      -- 创建Friendships表
-      CREATE TABLE Friendships (
-          UserID INT NOT NULL,
-          FriendID INT NOT NULL,
-          PRIMARY KEY (UserID, FriendID),
-          FOREIGN KEY (UserID) REFERENCES Users(UserID),
-          FOREIGN KEY (FriendID) REFERENCES Users(UserID),
-          CONSTRAINT CK_FriendshipOrder CHECK (UserID < FriendID),
-          CONSTRAINT CK_NotSelfFriend CHECK (UserID <> FriendID)
-      );
-      
-      -- 创建OnlineStatus表
-      CREATE TABLE OnlineStatus (
-          UserID INT PRIMARY KEY,
-          IPAddress VARCHAR(45) NOT NULL,
-          P2PPort INT NOT NULL,
-          LastActive DATETIME DEFAULT GETDATE(),
-          FOREIGN KEY (UserID) REFERENCES Users(UserID)
-      );
-      
-      -- 创建新的数据库登录和用户
-      CREATE LOGIN secure_chat_user WITH PASSWORD = 'SecureChat123!';
-      GO
-      
-      -- 将新登录用户与数据库用户关联
-      USE secure_communication;
-      GO
-      CREATE USER secure_chat_user FOR LOGIN secure_chat_user;
-      GO
-      
-      -- 授予数据库访问权限
-      EXEC sp_addrolemember 'db_owner', 'secure_chat_user';
-      GO
-     ```
+打开SQL Server Management Studio，连接到您的SQL Server实例，执行以下SQL语句：
+  ```sql
+   -- 创建数据库
+   CREATE DATABASE secure_communication;
+   GO
+   
+   -- 使用新创建的数据库
+   USE secure_communication;
+   GO
+   
+   -- 创建Users表
+   CREATE TABLE Users (
+       UserID INT IDENTITY(1,1) PRIMARY KEY,
+       Username NVARCHAR(50) NOT NULL UNIQUE,
+       Password NVARCHAR(64) NOT NULL,
+       PublicKey NVARCHAR(MAX) NOT NULL,
+       RegistrationDate DATETIME DEFAULT GETDATE()
+   );
+   
+   -- 创建Friendships表
+   CREATE TABLE Friendships (
+       UserID INT NOT NULL,
+       FriendID INT NOT NULL,
+       PRIMARY KEY (UserID, FriendID),
+       FOREIGN KEY (UserID) REFERENCES Users(UserID),
+       FOREIGN KEY (FriendID) REFERENCES Users(UserID),
+       CONSTRAINT CK_FriendshipOrder CHECK (UserID < FriendID),
+       CONSTRAINT CK_NotSelfFriend CHECK (UserID <> FriendID)
+   );
+   
+   -- 创建OnlineStatus表
+   CREATE TABLE OnlineStatus (
+       UserID INT PRIMARY KEY,
+       IPAddress VARCHAR(45) NOT NULL,
+       P2PPort INT NOT NULL,
+       LastActive DATETIME DEFAULT GETDATE(),
+       FOREIGN KEY (UserID) REFERENCES Users(UserID)
+   );
+   
+   -- 创建新的数据库登录和用户
+   CREATE LOGIN secure_chat_user WITH PASSWORD = 'SecureChat123!';
+   GO
+   
+   -- 将新登录用户与数据库用户关联
+   USE secure_communication;
+   GO
+   CREATE USER secure_chat_user FOR LOGIN secure_chat_user;
+   GO
+   
+   -- 授予数据库访问权限
+   EXEC sp_addrolemember 'db_owner', 'secure_chat_user';
+   GO
+  ```
 
 ## 6. 配置服务器
+修改服务器配置文件 `./server/config.py`：
+```python
+# 数据库信息
+db_info = {
+    "host": "localhost",  # 或您的SQL Server实例地址
+    "port": 1433,         # 默认SQL Server端口
+    "user": "secure_chat_user",
+    "password": "SecureChat123!",
+    "database": "secure_communication",
+}
 
-1. 修改服务器配置文件 `./server/config.py`：
-   ```python
-   # 数据库信息
-   db_info = {
-       "host": "localhost",  # 或您的SQL Server实例地址
-       "port": 1433,         # 默认SQL Server端口
-       "user": "secure_chat_user",
-       "password": "SecureChat123!",
-       "database": "secure_communication",
-   }
-
-   # 服务器配置
-   SERVER_HOST = "127.0.0.1"  # 保持为本地地址或设置为服务器公网地址
-   SERVER_PORT = 50000        # 确保此端口未被占用
-   ```
+# 服务器配置
+SERVER_HOST = "127.0.0.1"  # 保持为本地地址或设置为服务器公网地址
+SERVER_PORT = 50000        # 确保此端口未被占用
+```
 
 ## 7. 配置客户端
+修改客户端配置文件 `./client/config.py`：
+```python
+# 服务器配置
+SERVER_HOST = '127.0.0.1'  # 设置为服务器的IP地址
+SERVER_PORT = 50000        # 与服务器配置一致
 
-1. 修改客户端配置文件 `./client/config.py`：
-   ```python
-   # 服务器配置
-   SERVER_HOST = '127.0.0.1'  # 设置为服务器的IP地址
-   SERVER_PORT = 50000        # 与服务器配置一致
+# 客户端P2P监听配置
+P2P_LISTEN_HOST = '0.0.0.0'  # 监听所有可用接口
+P2P_LISTEN_PORT = 0          # 自动选择端口
 
-   # 客户端P2P监听配置
-   P2P_LISTEN_HOST = '0.0.0.0'  # 监听所有可用接口
-   P2P_LISTEN_PORT = 0          # 自动选择端口
-
-   # 密钥文件路径
-   PRIVATE_KEY_FILE = './private_key.pem'  # 修改为适合您的路径
-   PUBLIC_KEY_FILE = './public_key.pem'    # 修改为适合您的路径
-   ```
+# 密钥文件路径
+PRIVATE_KEY_FILE = './private_key.pem'  # 修改为适合您的路径
+PUBLIC_KEY_FILE = './public_key.pem'    # 修改为适合您的路径
+```
 
 ## 8. 启动系统
 
