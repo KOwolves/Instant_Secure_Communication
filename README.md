@@ -1,10 +1,11 @@
-
+# 安全即时通讯系统——密语
 
 ## 1. 系统概述
 
 该系统是一个安全聊天系统，包含客户端和服务器两个部分：
 - 客户端：提供Web界面，支持用户注册、登录、好友管理和安全聊天功能
 - 服务器：处理用户认证、好友关系管理、消息转发和密钥分发等功能
+
 ## 2. 系统功能
 
 本系统按照“安全、可靠、易用”的设计原则，将核心功能划分为客户端和服务器两大部分，各自承担不同职责，协同实现端到端的安全即时通信。
@@ -28,7 +29,7 @@
      1. 客户端 A 向服务器请求 B 的公钥。  
      2. A 生成一次性 AES-256 会话密钥，用 B 的公钥加密后发送给 B。  
      3. 双方在 P2P 连接上使用 AES-GCM 加密／认证所有消息。  
-![image text](https://github.com/KOwolves/Instant_Secure_Communication/blob/master/data/565b0690aaa73b4d4e9418f9c22ca6a.png)
+         ![image text](https://github.com/KOwolves/Instant_Secure_Communication/blob/master/data/565b0690aaa73b4d4e9418f9c22ca6a.png)
 
 5. **多媒体消息**  
    - **图片传输**：支持普通图片和隐写图片发送。  
@@ -98,55 +99,55 @@
    - 执行以下SQL语句：
      ```sql
     -- 创建数据库
-CREATE DATABASE secure_communication;
-GO
-
--- 使用新创建的数据库
-USE secure_communication;
-GO
-
--- 创建Users表
-CREATE TABLE Users (
-    UserID INT IDENTITY(1,1) PRIMARY KEY,
-    Username NVARCHAR(50) NOT NULL UNIQUE,
-    Password NVARCHAR(64) NOT NULL,
-    PublicKey NVARCHAR(MAX) NOT NULL,
-    RegistrationDate DATETIME DEFAULT GETDATE()
-);
-
--- 创建Friendships表
-CREATE TABLE Friendships (
-    UserID INT NOT NULL,
-    FriendID INT NOT NULL,
-    PRIMARY KEY (UserID, FriendID),
-    FOREIGN KEY (UserID) REFERENCES Users(UserID),
-    FOREIGN KEY (FriendID) REFERENCES Users(UserID),
-    CONSTRAINT CK_FriendshipOrder CHECK (UserID < FriendID),
-    CONSTRAINT CK_NotSelfFriend CHECK (UserID <> FriendID)
-);
-
--- 创建OnlineStatus表
-CREATE TABLE OnlineStatus (
-    UserID INT PRIMARY KEY,
-    IPAddress VARCHAR(45) NOT NULL,
-    P2PPort INT NOT NULL,
-    LastActive DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)
-);
-
--- 创建新的数据库登录和用户
-CREATE LOGIN secure_chat_user WITH PASSWORD = 'SecureChat123!';
-GO
-
--- 将新登录用户与数据库用户关联
-USE secure_communication;
-GO
-CREATE USER secure_chat_user FOR LOGIN secure_chat_user;
-GO
-
--- 授予数据库访问权限
-EXEC sp_addrolemember 'db_owner', 'secure_chat_user';
-GO
+   CREATE DATABASE secure_communication;
+   GO
+   
+   -- 使用新创建的数据库
+   USE secure_communication;
+   GO
+   
+   -- 创建Users表
+   CREATE TABLE Users (
+       UserID INT IDENTITY(1,1) PRIMARY KEY,
+       Username NVARCHAR(50) NOT NULL UNIQUE,
+       Password NVARCHAR(64) NOT NULL,
+       PublicKey NVARCHAR(MAX) NOT NULL,
+       RegistrationDate DATETIME DEFAULT GETDATE()
+   );
+   
+   -- 创建Friendships表
+   CREATE TABLE Friendships (
+       UserID INT NOT NULL,
+       FriendID INT NOT NULL,
+       PRIMARY KEY (UserID, FriendID),
+       FOREIGN KEY (UserID) REFERENCES Users(UserID),
+       FOREIGN KEY (FriendID) REFERENCES Users(UserID),
+       CONSTRAINT CK_FriendshipOrder CHECK (UserID < FriendID),
+       CONSTRAINT CK_NotSelfFriend CHECK (UserID <> FriendID)
+   );
+   
+   -- 创建OnlineStatus表
+   CREATE TABLE OnlineStatus (
+       UserID INT PRIMARY KEY,
+       IPAddress VARCHAR(45) NOT NULL,
+       P2PPort INT NOT NULL,
+       LastActive DATETIME DEFAULT GETDATE(),
+       FOREIGN KEY (UserID) REFERENCES Users(UserID)
+   );
+   
+   -- 创建新的数据库登录和用户
+   CREATE LOGIN secure_chat_user WITH PASSWORD = 'SecureChat123!';
+   GO
+   
+   -- 将新登录用户与数据库用户关联
+   USE secure_communication;
+   GO
+   CREATE USER secure_chat_user FOR LOGIN secure_chat_user;
+   GO
+   
+   -- 授予数据库访问权限
+   EXEC sp_addrolemember 'db_owner', 'secure_chat_user';
+   GO
      ```
 
 ## 6. 配置服务器
